@@ -45,15 +45,15 @@ function PantallaApagada() {
 export default function Page() {
   return (
     <main className="mx-auto flex min-h-dvh max-w-6xl flex-col gap-5 p-4 sm:p-8">
-      {/* El globo baja hasta la altura de la fila del título y asoma por arriba.
-          Va con transformación y no con margen: así nada de lo que viene
-          después se mueve un píxel.
+      {/* El globo cuelga sobre la fila del título en vez de ocupar su propia
+          banda: el bloque reserva 53 px y el globo, que mide 138, se desborda
+          hacia abajo hasta compartir altura con la placa y el indicador.
 
-          85 y no 101, que sería el centrado exacto: a 101 el globo terminaría en
-          299 y la placa de la consola empieza en 297, así que asomarían dos
-          píxeles de verde por encima de ella. Dos píxeles fuera de sitio no se
-          leen como una decisión, se leen como un fallo. */}
-      <div className="flex translate-y-[85px] justify-center pt-2">
+          Antes esto eran dos números peleándose —un relleno arriba y una
+          transformación de 85 px hacia abajo— y entre los dos dejaban 93 px de
+          nada al principio de la página. Un solo alto dice lo mismo y no deja
+          hueco: el desbordamiento ES la intención. */}
+      <div className="flex h-[53px] justify-center">
         <Globo />
       </div>
 
