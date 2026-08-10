@@ -58,7 +58,11 @@ for (const [i, pregunta] of PREGUNTAS.entries()) {
 
     const datos = await r.json();
     if (!r.ok) {
-      console.log(`\n\n  Falló con ${r.status}: ${datos.error}\n`);
+      console.log(
+        `\n\n  Falló con ${r.status}: ${datos.error}` +
+          (datos.detalle ? `\n  ${datos.detalle}` : "") +
+          `\n`,
+      );
       process.exit(1);
     }
 

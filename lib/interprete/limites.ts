@@ -7,7 +7,10 @@
  */
 
 export const MAX_ENTRADA = 200;
-export const MAX_SALIDA = 400;
+/** Los modelos de razonamiento gastan de este mismo presupuesto antes de
+    escribir nada. Con dos campos de texto libre en el esquema, 400 se queda
+    corto y el síntoma es engañoso: no da error, devuelve vacío. */
+export const MAX_SALIDA = 900;
 const POR_IP_POR_MINUTO = 5;
 const POR_DIA = 300;
 

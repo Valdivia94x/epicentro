@@ -24,6 +24,7 @@ export const ESQUEMA = {
     "orden",
     "limite",
     "lectura",
+    "noPuedo",
   ],
   properties: {
     regionId: {

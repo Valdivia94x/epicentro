@@ -72,8 +72,15 @@ export async function POST(peticion: Request) {
     });
   } catch (falla) {
     console.error("[consulta]", falla);
+    const detalle = falla instanceof Error ? falla.message : String(falla);
     return NextResponse.json(
-      { error: "No se pudo resolver la consulta. Inténtalo otra vez." },
+      {
+        error: "No se pudo resolver la consulta. Inténtalo otra vez.",
+        // El motivo real solo fuera de producción. Un 502 genérico está bien
+        // para quien usa la app, pero deja a quien la desarrolla mirando tres
+        // capas —esquema, OpenAI, ruta— para encontrar una línea mal puesta.
+        ...(process.env.NODE_ENV === "production" ? {} : { detalle }),
+      },
       { status: 502 },
     );
   }
