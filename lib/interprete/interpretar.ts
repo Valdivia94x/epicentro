@@ -1,5 +1,17 @@
-import "server-only";
 import OpenAI from "openai";
+
+/**
+ * Sin `server-only` a propósito.
+ *
+ * Este módulo lo importan dos cosas: la ruta de la app y el harness de evals,
+ * que es un proceso Node normal. `server-only` lanza en cualquier entorno que no
+ * sea un componente de servidor, así que ponerlo aquí deja los evals sin poder
+ * llamar al mismo código que corre en producción — y evaluar una copia del
+ * código no es evaluar el código.
+ *
+ * Lo que de verdad protege la llave es que se lee de `OPENAI_API_KEY` y no de
+ * `NEXT_PUBLIC_*`: Next nunca la mete en el paquete del navegador.
+ */
 import { createHash } from "node:crypto";
 import { ESQUEMA, INSTRUCCIONES, type Interpretacion } from "./esquema";
 import { MAX_SALIDA } from "./limites";

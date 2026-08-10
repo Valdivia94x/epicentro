@@ -8,14 +8,14 @@
     "start": "next start",
     "lint": "eslint",
     "grabar": "tsx tools/grabar-ejemplos.mts",
-    "mapa": "node tools/rasterizar-mundo.mjs"
+    "mapa": "node tools/rasterizar-mundo.mjs",
+    "eval": "tsx tools/evaluar.mts"
   },
   "dependencies": {
     "next": "16.3.0",
     "openai": "^7.4.0",
     "react": "19.2.8",
-    "react-dom": "19.2.8",
-    "server-only": "^0.0.1"
+    "react-dom": "19.2.8"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
