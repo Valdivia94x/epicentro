@@ -37,13 +37,17 @@ type Guardada = {
 
 export function Consola({
   alResolver,
+  conLlave,
 }: {
   alResolver: (r: Resultado) => void;
+  /** Si el despliegue lleva llave de OpenAI. Llega del servidor: averiguarlo
+      con una llamada fallida es enterarse por el camino más caro. */
+  conLlave: boolean;
 }) {
   const [pregunta, setPregunta] = useState("");
   const [cargando, setCargando] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [sinLlave, setSinLlave] = useState(false);
+  const [sinLlave, setSinLlave] = useState(!conLlave);
 
   // Volver al inicio también vacía la caja: dejar ahí la pregunta anterior
   // mientras el mapa enseña otra cosa es enseñar dos estados a la vez.
@@ -132,12 +136,17 @@ export function Consola({
           value={pregunta}
           onChange={(e) => setPregunta(e.target.value)}
           maxLength={200}
-          placeholder="¿ha temblado cerca de la Ciudad de México?"
+          disabled={!conLlave}
+          placeholder={
+            conLlave
+              ? "¿ha temblado cerca de la Ciudad de México?"
+              : "Esta demo no lleva llave de OpenAI — prueba con los ejemplos"
+          }
           className="min-w-0 flex-1 border-2 border-tinta/25 bg-placa-sombra/35 px-3 py-2 text-[12px] text-tinta placeholder:text-tinta/45"
         />
         <button
           type="submit"
-          disabled={cargando || !pregunta.trim()}
+          disabled={!conLlave || cargando || !pregunta.trim()}
           className="border-2 border-tinta bg-tinta px-4 py-2 text-[11px] tracking-[0.15em] text-placa disabled:opacity-40"
         >
           {cargando ? "…" : "INTERPRETAR"}
@@ -149,7 +158,9 @@ export function Consola({
       {(sinLlave || !error) && (
         <div className="flex flex-col gap-2">
           <p className="text-[10px] tracking-[0.12em] text-tinta/60">
-            {sinLlave ? "EJEMPLOS GUARDADOS" : "O PRUEBA CON"}
+            {sinLlave
+              ? "EJEMPLOS GUARDADOS — INTERPRETADOS POR EL MODELO, LOS SISMOS EN VIVO"
+              : "O PRUEBA CON"}
           </p>
           <div className="flex flex-wrap gap-2">
             {ejemplos.map((g) => (

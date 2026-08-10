@@ -26,10 +26,12 @@ export function Estacion({
   sismos: iniciales,
   consulta: consultaInicial,
   url: urlInicial,
+  conLlave,
 }: {
   sismos: Sismo[];
   consulta: Consulta;
   url: string;
+  conLlave: boolean;
 }) {
   const [seleccionado, setSeleccionado] = useState<string | null>(null);
   const [resultado, setResultado] = useState<Resultado | null>(null);
@@ -108,6 +110,7 @@ export function Estacion({
   return (
     <div className="flex flex-col gap-4">
       <Consola
+        conLlave={conLlave}
         alResolver={(r) => {
           setResultado(r);
           setSeleccionado(null);

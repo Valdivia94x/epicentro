@@ -3,6 +3,7 @@ import { connection } from "next/server";
 import { Estacion } from "@/components/estacion";
 import { Placa } from "@/components/placa";
 import { CONSULTA_POR_DEFECTO, buscar } from "@/lib/usgs";
+import { hayLlave } from "@/lib/interprete/interpretar";
 
 /**
  * El chasis es estático y se prerenderiza; los datos entran por detrás.
@@ -19,7 +20,17 @@ async function Pantalla() {
   // consulta se queda anclada al momento del despliegue.
   await connection();
   const { sismos, url } = await buscar(CONSULTA_POR_DEFECTO);
-  return <Estacion sismos={sismos} consulta={CONSULTA_POR_DEFECTO} url={url} />;
+  // `conLlave` se resuelve en el servidor y baja como dato. Descubrir que no
+  // hay llave escribiendo una pregunta y esperando un error es la peor forma de
+  // enterarse: el usuario ya invirtió el esfuerzo cuando se lo dices.
+  return (
+    <Estacion
+      sismos={sismos}
+      consulta={CONSULTA_POR_DEFECTO}
+      url={url}
+      conLlave={hayLlave()}
+    />
+  );
 }
 
 function PantallaApagada() {
