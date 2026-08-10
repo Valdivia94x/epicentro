@@ -1,26 +1,140 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/**
+ * Epicentro — estación de rastreo sísmico.
+ *
+ * El sujeto manda la paleta: esto es un instrumento de campo, no una consola de
+ * videojuego. La página es la CAJA —metal pintado verde oliva, placas de datos
+ * en crema— y dentro va la PANTALLA, oscura, con fósforo verde. Esa diferencia
+ * de material entre caja y pantalla es lo que sostiene todo el diseño; sin ella
+ * queda otro terminal retro sobre negro.
+ *
+ * La magnitud no se colorea por gusto: la rampa va de crema a rojo y codifica
+ * un valor ordenado. Es la única escala del sitio y no se usa para nada más.
+ */
+
+@theme {
+  /* La caja: metal pintado, con su luz y su sombra para que tenga volumen. */
+  --color-caja: #3d453c;
+  --color-caja-alta: #4e574b;
+  --color-caja-baja: #262c26;
+  --color-caja-honda: #171b17;
+
+  /* Placas de datos remachadas a la caja. Aquí el texto va en tinta, no en luz. */
+  --color-placa: #d7d0bb;
+  --color-placa-sombra: #b3ab94;
+  --color-tinta: #1b1e19;
+
+  /* La pantalla y su fósforo. */
+  --color-pantalla: #070b09;
+  --color-pantalla-alta: #0e1512;
+  --color-fosforo: #7ce8a6;
+  --color-fosforo-alto: #c4f8d9;
+  --color-fosforo-tenue: #3d7a5b;
+  --color-fosforo-honda: #1d3b2c;
+
+  /* Magnitud: rampa secuencial, de menor a mayor. Único uso del color como dato. */
+  --color-m1: #f0e9bd;
+  --color-m2: #f2c451;
+  --color-m3: #e8823a;
+  --color-m4: #d4402c;
+
+  --font-pixel: var(--fuente-departure), ui-monospace, monospace;
+
+  /* Un solo paso de rejilla. Todo se alinea a múltiplos de esto, que es lo que
+     hace que un diseño de píxeles se lea como tal y no como uno normal con
+     bordes duros. */
+  --espaciado-pixel: 4px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  /* Nada de curvas: el redondeo delata al instante que no es un mapa de bits. */
+  border-radius: 0 !important;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  background: var(--color-caja-honda);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background:
+    /* Tornillos de la caja, uno por esquina. */
+    radial-gradient(
+        circle at 14px 14px,
+        var(--color-caja-baja) 0 3px,
+        transparent 3px
+      )
+      no-repeat,
+    radial-gradient(
+        circle at calc(100% - 14px) 14px,
+        var(--color-caja-baja) 0 3px,
+        transparent 3px
+      )
+      no-repeat,
+    var(--color-caja);
+  color: var(--color-fosforo);
+  font-family: var(--font-pixel);
+  /* Sin suavizado: el objetivo es que cada píxel se vea. */
+  -webkit-font-smoothing: none;
+  font-smooth: never;
+  text-rendering: optimizeSpeed;
+}
+
+/* Todo lo que sea imagen o lienzo se amplía por bloques, no interpolando. */
+img,
+canvas,
+svg {
+  image-rendering: pixelated;
+}
+
+/** Marco de la pantalla: bisel hundido en la caja, en escalones de 4px. */
+.pantalla {
+  background: var(--color-pantalla);
+  box-shadow:
+    inset 0 0 0 4px var(--color-caja-honda),
+    inset 0 0 0 8px var(--color-caja-baja),
+    inset 0 0 0 12px var(--color-caja-alta),
+    0 0 0 4px var(--color-caja-baja);
+}
+
+/** Placa de datos: sobresale de la caja en vez de hundirse. */
+.placa {
+  background: var(--color-placa);
+  color: var(--color-tinta);
+  box-shadow:
+    inset -2px -2px 0 var(--color-placa-sombra),
+    inset 2px 2px 0 #eae4d3,
+    0 0 0 2px var(--color-caja-honda);
+}
+
+/** Líneas de barrido. Muy tenues: a plena intensidad son un disfraz, no una
+    textura, y a este tamaño de letra además la vuelven ilegible. */
+.barrido {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.22) 0 1px,
+    transparent 1px 3px
+  );
+}
+
+/** El texto de fósforo brilla un poco, como el de verdad. */
+.brillo {
+  text-shadow: 0 0 6px color-mix(in srgb, var(--color-fosforo) 45%, transparent);
+}
+
+/* Foco visible y cuadrado, coherente con el resto. */
+:where(a, button, input, select, [tabindex]):focus-visible {
+  outline: 3px solid var(--color-m2);
+  outline-offset: 2px;
+}
+
+/* Quien pida menos movimiento no ve ninguno. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
