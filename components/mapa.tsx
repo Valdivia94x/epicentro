@@ -1,7 +1,12 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { MUNDO, aCelda, desempacar, esTierra } from "@/content/mundo";
+import { MUNDO, aCeldaPlana, desempacar, esTierra } from "@/content/mundo";
+
+/** El mapa plano no enseña los polos: la Antártida ocupa un quinto del alto sin
+    aportar sismos. El ráster sí los tiene, porque el globo los necesita, así que
+    aquí se recorta al pintar. */
+const ALTO = MUNDO.recorte.hasta - MUNDO.recorte.desde;
 import { escalon, type Sismo } from "@/lib/usgs";
 
 /**
@@ -73,7 +78,7 @@ export function Mapa({
     if (!ctx) return;
 
     const ancho = MUNDO.ancho * celda;
-    const alto = MUNDO.alto * celda;
+    const alto = ALTO * celda;
     cv.width = ancho;
     cv.height = alto;
 
@@ -84,15 +89,15 @@ export function Mapa({
     // los datos. Se dibuja antes que la tierra para que quede por debajo.
     ctx.fillStyle = REJILLA;
     for (let c = 0; c < MUNDO.ancho; c += 15) {
-      for (let f = 0; f < MUNDO.alto; f += 2)
+      for (let f = 0; f < ALTO; f += 2)
         ctx.fillRect(c * celda, f * celda, celda, celda);
     }
 
     const datos = desempacar();
     ctx.fillStyle = TIERRA;
-    for (let f = 0; f < MUNDO.alto; f++) {
+    for (let f = 0; f < ALTO; f++) {
       for (let c = 0; c < MUNDO.ancho; c++) {
-        if (esTierra(datos, c, f))
+        if (esTierra(datos, c, f + MUNDO.recorte.desde))
           ctx.fillRect(c * celda, f * celda, celda, celda);
       }
     }
@@ -101,7 +106,7 @@ export function Mapa({
     // enjambre de réplicas pequeñas.
     const ordenados = [...sismos].sort((a, b) => a.magnitud - b.magnitud);
     for (const s of ordenados) {
-      const p = aCelda(s.longitud, s.latitud);
+      const p = aCeldaPlana(s.longitud, s.latitud);
       if (!p) continue;
 
       const r = radioDe(s.magnitud) * celda;
@@ -141,11 +146,11 @@ export function Mapa({
     if (!cv) return;
     const caja = cv.getBoundingClientRect();
     const cx = ((evento.clientX - caja.left) / caja.width) * MUNDO.ancho;
-    const cy = ((evento.clientY - caja.top) / caja.height) * MUNDO.alto;
+    const cy = ((evento.clientY - caja.top) / caja.height) * ALTO;
 
     let mejor: { id: string; d: number } | null = null;
     for (const s of sismos) {
-      const p = aCelda(s.longitud, s.latitud);
+      const p = aCeldaPlana(s.longitud, s.latitud);
       if (!p) continue;
       const d = Math.hypot(p.columna + 0.5 - cx, p.fila + 0.5 - cy);
       if (d <= 4 && (!mejor || d < mejor.d)) mejor = { id: s.id, d };
@@ -164,7 +169,7 @@ export function Mapa({
         className="block cursor-crosshair"
         style={{
           width: MUNDO.ancho * celda,
-          height: MUNDO.alto * celda,
+          height: ALTO * celda,
           imageRendering: "pixelated",
         }}
         aria-label={`Mapa mundial con ${sismos.length} sismos. La lista de abajo tiene los mismos datos.`}

@@ -19,12 +19,15 @@ const FUENTE =
   "https://raw.githubusercontent.com/martynafford/natural-earth-geojson/master/110m/physical/ne_110m_land.json";
 
 const ANCHO = 180; // 2° por celda
-const ALTO = 72;
-// Se recorta la Antártida y el Ártico alto: sin sismos y ocupan un quinto del
-// alto. El corte se guarda con el mapa para que quien pinte encima use la misma
-// caja y no tenga que adivinarla.
-const LAT_MAX = 80;
-const LAT_MIN = -64;
+const ALTO = 90;
+// El mundo entero, de polo a polo. El mapa plano recorta al pintar porque la
+// Antártida le ocupa un quinto del alto sin aportar sismos, pero el ráster no
+// puede recortarla: el globo la necesita o le sale un agujero en el polo sur.
+const LAT_MAX = 90;
+const LAT_MIN = -90;
+
+/** Lo que el mapa plano enseña de todo esto. */
+const RECORTE = { latMax: 80, latMin: -64 };
 
 /** Rayo horizontal: cuenta cruces de aristas a la derecha del punto. */
 function dentro(x, y, anillo) {
@@ -100,6 +103,8 @@ export const MUNDO = {
   alto: ${ALTO},
   latMax: ${LAT_MAX},
   latMin: ${LAT_MIN},
+  /** Filas que enseña el mapa plano. El globo las usa todas. */
+  recorte: { desde: ${(LAT_MAX - RECORTE.latMax) / 2}, hasta: ${(LAT_MAX - RECORTE.latMin) / 2} },
   /** Un bit por celda, en orden de lectura, empaquetado a base64. */
   bits: "${Buffer.from(bits).toString("base64")}",
 } as const;
@@ -118,17 +123,22 @@ export function desempacar() {
   return datos;
 }
 
-/** Coordenadas del mundo a celda. Devuelve null fuera del recorte. */
+/** Coordenadas del mundo a celda, en la rejilla completa de polo a polo. */
 export function aCelda(longitud: number, latitud: number) {
-  if (latitud > MUNDO.latMax || latitud < MUNDO.latMin) return null;
   const columna = Math.floor(((longitud + 180) / 360) * MUNDO.ancho);
-  const fila = Math.floor(
-    ((MUNDO.latMax - latitud) / (MUNDO.latMax - MUNDO.latMin)) * MUNDO.alto,
-  );
+  const fila = Math.floor(((MUNDO.latMax - latitud) / 180) * MUNDO.alto);
   return {
-    columna: Math.min(MUNDO.ancho - 1, Math.max(0, columna)),
+    columna: ((columna % MUNDO.ancho) + MUNDO.ancho) % MUNDO.ancho,
     fila: Math.min(MUNDO.alto - 1, Math.max(0, fila)),
   };
+}
+
+/** La misma celda pero en coordenadas del mapa plano, que empieza más abajo.
+    Devuelve null cuando el punto cae fuera de lo que ese mapa enseña. */
+export function aCeldaPlana(longitud: number, latitud: number) {
+  const p = aCelda(longitud, latitud);
+  if (p.fila < MUNDO.recorte.desde || p.fila >= MUNDO.recorte.hasta) return null;
+  return { columna: p.columna, fila: p.fila - MUNDO.recorte.desde };
 }
 `;
 

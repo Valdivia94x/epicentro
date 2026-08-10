@@ -2,6 +2,7 @@ import { Suspense } from "react";
 import { connection } from "next/server";
 import { Estacion } from "@/components/estacion";
 import { Placa } from "@/components/placa";
+import { Globo } from "@/components/globo";
 import { CONSULTA_POR_DEFECTO, buscar } from "@/lib/usgs";
 import { hayLlave } from "@/lib/interprete/interpretar";
 
@@ -44,6 +45,12 @@ function PantallaApagada() {
 export default function Page() {
   return (
     <main className="mx-auto flex min-h-dvh max-w-6xl flex-col gap-5 p-4 sm:p-8">
+      {/* El globo va arriba del todo y centrado, encima de la fila del título:
+          es el emblema del instrumento, no un elemento más de la barra. */}
+      <div className="flex justify-center pt-2">
+        <Globo />
+      </div>
+
       <header className="flex flex-wrap items-end justify-between gap-4">
         <h1 className="contents">
           <Placa />
