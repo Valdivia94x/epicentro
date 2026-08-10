@@ -1,11 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Mapa } from "./mapa";
 import { Consola, type Resultado } from "./consola";
 import { escalon, hace, type Consulta, type Sismo } from "@/lib/usgs";
 import { REGION_POR_ID } from "@/content/regiones";
 import { useAhora } from "@/lib/reloj";
+import { alVolver } from "@/lib/inicio";
 
 const COLOR_ESCALON = {
   1: "text-m1",
@@ -42,6 +43,36 @@ export function Estacion({
   const activo = sismos.find((s) => s.id === seleccionado) ?? null;
   const region = REGION_POR_ID.get(consulta.regionId);
   const [ampliando, setAmpliando] = useState(false);
+
+  /**
+   * Volver al inicio: primero se limpia, y luego se piden los datos otra vez.
+   *
+   * Limpiar y ya devolvería lo que trajo el servidor al abrir la página, que
+   * con una pestaña abierta un rato es una foto vieja. En un sitio que promete
+   * datos en vivo, «volver al inicio» tiene que traer los de ahora.
+   */
+  useEffect(() => {
+    return alVolver(() => {
+      setResultado(null);
+      setSeleccionado(null);
+
+      void fetch("/api/buscar", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ consulta: consultaInicial }),
+      })
+        .then((r) => (r.ok ? r.json() : null))
+        .then((datos) => {
+          if (!datos) return; // Si falla, se queda lo que ya había pintado.
+          setResultado({
+            ...datos,
+            lectura: "Todos los sismos del mundo de los últimos siete días.",
+            noPuedo: "",
+            fuente: "manual",
+          });
+        });
+    });
+  }, [consultaInicial]);
 
   /**
    * Vuelve a buscar con la consulta aflojada.

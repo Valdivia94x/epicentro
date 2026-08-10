@@ -1,8 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import guardadas from "@/content/consultas-guardadas.json";
 import type { Consulta, Sismo } from "@/lib/usgs";
+import { alVolver } from "@/lib/inicio";
 
 /**
  * La consola: de una pregunta en español a una consulta ejecutada.
@@ -43,6 +44,17 @@ export function Consola({
   const [cargando, setCargando] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [sinLlave, setSinLlave] = useState(false);
+
+  // Volver al inicio también vacía la caja: dejar ahí la pregunta anterior
+  // mientras el mapa enseña otra cosa es enseñar dos estados a la vez.
+  useEffect(
+    () =>
+      alVolver(() => {
+        setPregunta("");
+        setError(null);
+      }),
+    [],
+  );
 
   async function preguntar(e: React.FormEvent) {
     e.preventDefault();
