@@ -47,7 +47,7 @@ export default function Page() {
     <main className="mx-auto flex min-h-dvh max-w-6xl flex-col gap-5 p-4 sm:p-8">
       {/* El globo va arriba del todo y centrado, encima de la fila del título:
           es el emblema del instrumento, no un elemento más de la barra. */}
-      <div className="flex justify-center pt-2">
+      <div className="flex translate-y-5 justify-center pt-2">
         <Globo />
       </div>
 
