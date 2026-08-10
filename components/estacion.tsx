@@ -98,9 +98,11 @@ export function Estacion({
             </p>
           )}
           <p className="mt-2 text-[10px] text-fosforo-tenue">
-            {resultado.fuente === "modelo"
+            {resultado.fuente === "vivo"
               ? "Interpretado por el modelo ahora mismo."
-              : "Interpretación grabada a mano. Los sismos sí se acaban de pedir al USGS."}
+              : resultado.fuente === "grabado"
+                ? "Interpretación del modelo, grabada. Los sismos sí se acaban de pedir al USGS."
+                : "Interpretación escrita a mano. Los sismos sí se acaban de pedir al USGS."}
           </p>
           {resultado.correcciones.length > 0 && (
             <ul className="mt-2 text-[10px] text-m3">

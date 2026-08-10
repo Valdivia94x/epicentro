@@ -185,9 +185,9 @@ export const CASOS: Caso[] = [
     id: "dos_regiones",
     pregunta: "¿tembló en Chile o en Japón?",
     porQue:
-      "El esquema admite una región por consulta, no dos. Mide que elija una y lo diga, en vez de fingir que cubrió las dos o irse al mundo entero sin avisar.",
+      "El esquema admite una región por consulta, no dos. Mide que elija una y lo diga, en vez de fingir que cubrió las dos o irse al mundo entero sin avisar. Ojo con la lista de aceptadas: al escribirla dejé fuera anillo_de_fuego, y resulta ser la MEJOR respuesta —contiene Chile y Japón, verificado, y descarta la mitad del planeta que «mundo» arrastra—. El modelo la eligió y mi test lo llamó fallo.",
     espera: {
-      regiones: ["chile_peru", "japon", "mundo"],
+      regiones: ["chile_peru", "japon", "mundo", "anillo_de_fuego"],
       debeAdmitirImposible: true,
     },
   },

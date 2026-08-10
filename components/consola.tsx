@@ -22,7 +22,10 @@ export type Resultado = {
   /** Qué parte de la petición no cabe en una consulta. Vacío casi siempre. */
   noPuedo: string;
   correcciones: string[];
-  fuente: "modelo" | "manual";
+  /** Tres estados, no dos. Un ejemplo grabado del modelo no es lo mismo que una
+      llamada de ahora, y decir «ahora mismo» sobre algo enlatado es mentir en
+      pequeño — que en una demo es exactamente donde se miente. */
+  fuente: "vivo" | "grabado" | "manual";
 };
 
 type Guardada = {
@@ -66,7 +69,7 @@ export function Consola({
         return;
       }
 
-      alResolver({ ...datos, fuente: "modelo" });
+      alResolver({ ...datos, fuente: "vivo" });
     } catch {
       setError("Se cayó la conexión");
     } finally {
@@ -95,7 +98,7 @@ export function Consola({
         ...datos,
         lectura: g.consulta.lectura,
         noPuedo: g.consulta.noPuedo ?? "",
-        fuente: g.fuente === "modelo" ? "modelo" : "manual",
+        fuente: g.fuente === "modelo" ? "grabado" : "manual",
       });
     } catch {
       setError("Se cayó la conexión");

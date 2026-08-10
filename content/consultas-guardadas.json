@@ -9,8 +9,9 @@
         "magnitudMinima": 2.5,
         "dias": 90,
         "orden": "magnitud",
-        "limite": 500,
-        "lectura": "Entendí que preguntas por el sismo de Chiapas que ya ocurrió; buscaré los más fuertes en México de los últimos 90 días."
+        "limite": 1,
+        "lectura": "Entendí que quieres identificar qué tan fuerte fue el sismo ocurrido en Chiapas.",
+        "noPuedo": "La consulta no permite ubicar con certeza un suceso específico llamado «lo de Chiapas»; buscaré el de mayor magnitud en México durante los últimos 90 días como aproximación."
       }
     },
     {
@@ -22,7 +23,8 @@
         "dias": 30,
         "orden": "reciente",
         "limite": 500,
-        "lectura": "Entendí que buscas los sismos de magnitud mayor a 5 en el Pacífico durante este mes."
+        "lectura": "Entendí que buscas sismos de magnitud mayor a 5 en el Pacífico durante este mes.",
+        "noPuedo": "El Pacífico completo no corresponde exactamente a una sola región disponible; usaré el Cinturón de Fuego como la aproximación más cercana."
       }
     },
     {
@@ -34,7 +36,8 @@
         "dias": 90,
         "orden": "reciente",
         "limite": 500,
-        "lectura": "Entendí que quieres revisar sismos recientes que podrían sentirse cerca de la Ciudad de México, especialmente en la costa de Guerrero y Oaxaca."
+        "lectura": "Entendí que quieres revisar los sismos recientes en la zona de Guerrero y Oaxaca que puede sentirse cerca de la Ciudad de México.",
+        "noPuedo": "La consulta no puede filtrar por distancia exacta a la Ciudad de México ni confirmar si un sismo se sintió ahí."
       }
     },
     {
@@ -46,7 +49,8 @@
         "dias": 365,
         "orden": "magnitud",
         "limite": 5,
-        "lectura": "Entendí que quieres los cinco sismos de mayor magnitud ocurridos en todo el mundo durante el último año."
+        "lectura": "Entendí que quieres los cinco sismos de mayor magnitud registrados en todo el mundo durante el último año.",
+        "noPuedo": ""
       }
     },
     {
@@ -58,7 +62,8 @@
         "dias": 90,
         "orden": "reciente",
         "limite": 500,
-        "lectura": "Entendí que quieres revisar si ha habido sismos en Islandia, sin especificar una fecha ni una magnitud mínima."
+        "lectura": "Entendí que quieres ver sismos recientes en Islandia.",
+        "noPuedo": ""
       }
     },
     {
@@ -70,7 +75,34 @@
         "dias": 7,
         "orden": "magnitud",
         "limite": 500,
-        "lectura": "Entendí que buscas los terremotos de magnitud mayor a 9 ocurridos en todo el mundo durante esta semana."
+        "lectura": "Entendí que quieres consultar los terremotos de magnitud mayor a 9 ocurridos esta semana en todo el mundo.",
+        "noPuedo": ""
+      }
+    },
+    {
+      "pregunta": "¿va a temblar mañana en la Ciudad de México?",
+      "fuente": "modelo",
+      "consulta": {
+        "regionId": "mexico",
+        "magnitudMinima": 2.5,
+        "dias": 1,
+        "orden": "reciente",
+        "limite": 500,
+        "lectura": "Entendí que preguntas si habrá un sismo mañana en la Ciudad de México; la consulta solo puede mostrar sismos que ya ocurrieron en México durante el último día.",
+        "noPuedo": "No se pueden predecir sismos ni expresar una consulta sobre eventos futuros. Ciudad de México tampoco tiene un filtro propio; uso México como la región más cercana."
+      }
+    },
+    {
+      "pregunta": "¿ha habido sismos profundos, de más de 300 km?",
+      "fuente": "modelo",
+      "consulta": {
+        "regionId": "mundo",
+        "magnitudMinima": 4.5,
+        "dias": 7,
+        "orden": "reciente",
+        "limite": 50,
+        "lectura": "Entendí que quieres revisar los sismos recientes en todo el mundo para saber si ha habido eventos profundos de más de 300 km.",
+        "noPuedo": "La consulta no puede filtrar ni informar la profundidad de los sismos; solo puede mostrar eventos por región, magnitud, periodo, orden y cantidad."
       }
     }
   ]

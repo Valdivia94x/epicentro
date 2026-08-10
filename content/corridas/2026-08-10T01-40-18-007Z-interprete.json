@@ -1,0 +1,2316 @@
+{
+  "id": "2026-08-10T01-40-18-007Z-interprete",
+  "fecha": "2026-08-10T01:40:18.008Z",
+  "modelo": "gpt-5.6-terra",
+  "huellaPrompt": "62259d400134",
+  "huellaRegiones": "50a1a132a120",
+  "repeticiones": 3,
+  "resultados": [
+    {
+      "casoId": "mundo_reciente",
+      "pregunta": "¿qué ha temblado hoy?",
+      "intentos": [
+        {
+          "consulta": {
+            "regionId": "mundo",
+            "magnitudMinima": 4.5,
+            "dias": 1,
+            "orden": "reciente",
+            "limite": 500,
+            "lectura": "Entendí que quieres ver los sismos registrados hoy en todo el mundo, ordenados del más reciente al más antiguo.",
+            "noPuedo": ""
+          },
+          "lectura": "Entendí que quieres ver los sismos registrados hoy en todo el mundo, ordenados del más reciente al más antiguo.",
+          "noPuedo": "",
+          "error": null,
+          "veredictos": [
+            {
+              "asercion": "region",
+              "descripcion": "Elige una región que cubre lo que preguntaron",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "Todo el mundo"
+            },
+            {
+              "asercion": "orden",
+              "descripcion": "Ordena por lo que la pregunta pide",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "ordena por reciente (se esperaba reciente)"
+            },
+            {
+              "asercion": "devuelve_algo",
+              "descripcion": "La consulta encuentra al menos un sismo",
+              "familia": "resultado",
+              "pasa": true,
+              "detalle": "15 eventos"
+            }
+          ],
+          "pasa": true,
+          "pasaResultado": true,
+          "cuantosSismos": 15,
+          "ms": 3598
+        },
+        {
+          "consulta": {
+            "regionId": "mundo",
+            "magnitudMinima": 4.5,
+            "dias": 1,
+            "orden": "reciente",
+            "limite": 500,
+            "lectura": "Entendí que quieres ver los sismos registrados hoy en todo el mundo, del más reciente hacia atrás.",
+            "noPuedo": ""
+          },
+          "lectura": "Entendí que quieres ver los sismos registrados hoy en todo el mundo, del más reciente hacia atrás.",
+          "noPuedo": "",
+          "error": null,
+          "veredictos": [
+            {
+              "asercion": "region",
+              "descripcion": "Elige una región que cubre lo que preguntaron",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "Todo el mundo"
+            },
+            {
+              "asercion": "orden",
+              "descripcion": "Ordena por lo que la pregunta pide",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "ordena por reciente (se esperaba reciente)"
+            },
+            {
+              "asercion": "devuelve_algo",
+              "descripcion": "La consulta encuentra al menos un sismo",
+              "familia": "resultado",
+              "pasa": true,
+              "detalle": "15 eventos"
+            }
+          ],
+          "pasa": true,
+          "pasaResultado": true,
+          "cuantosSismos": 15,
+          "ms": 1647
+        },
+        {
+          "consulta": {
+            "regionId": "mundo",
+            "magnitudMinima": 4.5,
+            "dias": 1,
+            "orden": "reciente",
+            "limite": 500,
+            "lectura": "Entendí que quieres ver los sismos que han ocurrido hoy en todo el mundo, del más reciente hacia atrás.",
+            "noPuedo": ""
+          },
+          "lectura": "Entendí que quieres ver los sismos que han ocurrido hoy en todo el mundo, del más reciente hacia atrás.",
+          "noPuedo": "",
+          "error": null,
+          "veredictos": [
+            {
+              "asercion": "region",
+              "descripcion": "Elige una región que cubre lo que preguntaron",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "Todo el mundo"
+            },
+            {
+              "asercion": "orden",
+              "descripcion": "Ordena por lo que la pregunta pide",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "ordena por reciente (se esperaba reciente)"
+            },
+            {
+              "asercion": "devuelve_algo",
+              "descripcion": "La consulta encuentra al menos un sismo",
+              "familia": "resultado",
+              "pasa": true,
+              "detalle": "15 eventos"
+            }
+          ],
+          "pasa": true,
+          "pasaResultado": true,
+          "cuantosSismos": 15,
+          "ms": 1483
+        }
+      ],
+      "pasa": true,
+      "pasaron": 3
+    },
+    {
+      "casoId": "japon_ano",
+      "pregunta": "terremotos en Japón el último año",
+      "intentos": [
+        {
+          "consulta": {
+            "regionId": "japon",
+            "magnitudMinima": 2.5,
+            "dias": 365,
+            "orden": "reciente",
+            "limite": 500,
+            "lectura": "Entendí que buscas los terremotos registrados en Japón durante el último año.",
+            "noPuedo": ""
+          },
+          "lectura": "Entendí que buscas los terremotos registrados en Japón durante el último año.",
+          "noPuedo": "",
+          "error": null,
+          "veredictos": [
+            {
+              "asercion": "region",
+              "descripcion": "Elige una región que cubre lo que preguntaron",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "Japón"
+            },
+            {
+              "asercion": "ventana",
+              "descripcion": "La ventana de tiempo alcanza para encontrar algo",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "365 días (mínimo 300)"
+            },
+            {
+              "asercion": "devuelve_algo",
+              "descripcion": "La consulta encuentra al menos un sismo",
+              "familia": "resultado",
+              "pasa": true,
+              "detalle": "500 eventos"
+            },
+            {
+              "asercion": "lugar_cubierto",
+              "descripcion": "Entre los resultados sale el sitio por el que preguntaron",
+              "familia": "resultado",
+              "pasa": true,
+              "detalle": "486 en «Japan»"
+            }
+          ],
+          "pasa": true,
+          "pasaResultado": true,
+          "cuantosSismos": 500,
+          "ms": 2419
+        },
+        {
+          "consulta": {
+            "regionId": "japon",
+            "magnitudMinima": 2.5,
+            "dias": 365,
+            "orden": "reciente",
+            "limite": 500,
+            "lectura": "Entendí que quieres consultar los terremotos registrados en Japón durante el último año.",
+            "noPuedo": ""
+          },
+          "lectura": "Entendí que quieres consultar los terremotos registrados en Japón durante el último año.",
+          "noPuedo": "",
+          "error": null,
+          "veredictos": [
+            {
+              "asercion": "region",
+              "descripcion": "Elige una región que cubre lo que preguntaron",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "Japón"
+            },
+            {
+              "asercion": "ventana",
+              "descripcion": "La ventana de tiempo alcanza para encontrar algo",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "365 días (mínimo 300)"
+            },
+            {
+              "asercion": "devuelve_algo",
+              "descripcion": "La consulta encuentra al menos un sismo",
+              "familia": "resultado",
+              "pasa": true,
+              "detalle": "500 eventos"
+            },
+            {
+              "asercion": "lugar_cubierto",
+              "descripcion": "Entre los resultados sale el sitio por el que preguntaron",
+              "familia": "resultado",
+              "pasa": true,
+              "detalle": "486 en «Japan»"
+            }
+          ],
+          "pasa": true,
+          "pasaResultado": true,
+          "cuantosSismos": 500,
+          "ms": 3297
+        },
+        {
+          "consulta": {
+            "regionId": "japon",
+            "magnitudMinima": 2.5,
+            "dias": 365,
+            "orden": "reciente",
+            "limite": 500,
+            "lectura": "Entendí que buscas los terremotos registrados en Japón durante el último año, ordenados del más reciente al más antiguo.",
+            "noPuedo": ""
+          },
+          "lectura": "Entendí que buscas los terremotos registrados en Japón durante el último año, ordenados del más reciente al más antiguo.",
+          "noPuedo": "",
+          "error": null,
+          "veredictos": [
+            {
+              "asercion": "region",
+              "descripcion": "Elige una región que cubre lo que preguntaron",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "Japón"
+            },
+            {
+              "asercion": "ventana",
+              "descripcion": "La ventana de tiempo alcanza para encontrar algo",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "365 días (mínimo 300)"
+            },
+            {
+              "asercion": "devuelve_algo",
+              "descripcion": "La consulta encuentra al menos un sismo",
+              "familia": "resultado",
+              "pasa": true,
+              "detalle": "500 eventos"
+            },
+            {
+              "asercion": "lugar_cubierto",
+              "descripcion": "Entre los resultados sale el sitio por el que preguntaron",
+              "familia": "resultado",
+              "pasa": true,
+              "detalle": "486 en «Japan»"
+            }
+          ],
+          "pasa": true,
+          "pasaResultado": true,
+          "cuantosSismos": 500,
+          "ms": 1747
+        }
+      ],
+      "pasa": true,
+      "pasaron": 3
+    },
+    {
+      "casoId": "cinco_mas_grandes",
+      "pregunta": "los cinco más grandes del año en todo el mundo",
+      "intentos": [
+        {
+          "consulta": {
+            "regionId": "mundo",
+            "magnitudMinima": 4.5,
+            "dias": 365,
+            "orden": "magnitud",
+            "limite": 5,
+            "lectura": "Entendí que quieres los cinco sismos de mayor magnitud registrados en todo el mundo durante este año.",
+            "noPuedo": ""
+          },
+          "lectura": "Entendí que quieres los cinco sismos de mayor magnitud registrados en todo el mundo durante este año.",
+          "noPuedo": "",
+          "error": null,
+          "veredictos": [
+            {
+              "asercion": "region",
+              "descripcion": "Elige una región que cubre lo que preguntaron",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "Todo el mundo"
+            },
+            {
+              "asercion": "ventana",
+              "descripcion": "La ventana de tiempo alcanza para encontrar algo",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "365 días (mínimo 300)"
+            },
+            {
+              "asercion": "orden",
+              "descripcion": "Ordena por lo que la pregunta pide",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "ordena por magnitud (se esperaba magnitud)"
+            },
+            {
+              "asercion": "limite",
+              "descripcion": "No devuelve una avalancha cuando le piden uno",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "límite 5 (tope 5)"
+            },
+            {
+              "asercion": "devuelve_algo",
+              "descripcion": "La consulta encuentra al menos un sismo",
+              "familia": "resultado",
+              "pasa": true,
+              "detalle": "5 eventos"
+            }
+          ],
+          "pasa": true,
+          "pasaResultado": true,
+          "cuantosSismos": 5,
+          "ms": 1481
+        },
+        {
+          "consulta": {
+            "regionId": "mundo",
+            "magnitudMinima": 4.5,
+            "dias": 365,
+            "orden": "magnitud",
+            "limite": 5,
+            "lectura": "Entendí que quieres los cinco sismos de mayor magnitud registrados en todo el mundo durante el último año.",
+            "noPuedo": ""
+          },
+          "lectura": "Entendí que quieres los cinco sismos de mayor magnitud registrados en todo el mundo durante el último año.",
+          "noPuedo": "",
+          "error": null,
+          "veredictos": [
+            {
+              "asercion": "region",
+              "descripcion": "Elige una región que cubre lo que preguntaron",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "Todo el mundo"
+            },
+            {
+              "asercion": "ventana",
+              "descripcion": "La ventana de tiempo alcanza para encontrar algo",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "365 días (mínimo 300)"
+            },
+            {
+              "asercion": "orden",
+              "descripcion": "Ordena por lo que la pregunta pide",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "ordena por magnitud (se esperaba magnitud)"
+            },
+            {
+              "asercion": "limite",
+              "descripcion": "No devuelve una avalancha cuando le piden uno",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "límite 5 (tope 5)"
+            },
+            {
+              "asercion": "devuelve_algo",
+              "descripcion": "La consulta encuentra al menos un sismo",
+              "familia": "resultado",
+              "pasa": true,
+              "detalle": "5 eventos"
+            }
+          ],
+          "pasa": true,
+          "pasaResultado": true,
+          "cuantosSismos": 5,
+          "ms": 1233
+        },
+        {
+          "consulta": {
+            "regionId": "mundo",
+            "magnitudMinima": 4.5,
+            "dias": 365,
+            "orden": "magnitud",
+            "limite": 5,
+            "lectura": "Los cinco sismos de mayor magnitud registrados en todo el mundo durante el último año.",
+            "noPuedo": ""
+          },
+          "lectura": "Los cinco sismos de mayor magnitud registrados en todo el mundo durante el último año.",
+          "noPuedo": "",
+          "error": null,
+          "veredictos": [
+            {
+              "asercion": "region",
+              "descripcion": "Elige una región que cubre lo que preguntaron",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "Todo el mundo"
+            },
+            {
+              "asercion": "ventana",
+              "descripcion": "La ventana de tiempo alcanza para encontrar algo",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "365 días (mínimo 300)"
+            },
+            {
+              "asercion": "orden",
+              "descripcion": "Ordena por lo que la pregunta pide",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "ordena por magnitud (se esperaba magnitud)"
+            },
+            {
+              "asercion": "limite",
+              "descripcion": "No devuelve una avalancha cuando le piden uno",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "límite 5 (tope 5)"
+            },
+            {
+              "asercion": "devuelve_algo",
+              "descripcion": "La consulta encuentra al menos un sismo",
+              "familia": "resultado",
+              "pasa": true,
+              "detalle": "5 eventos"
+            }
+          ],
+          "pasa": true,
+          "pasaResultado": true,
+          "cuantosSismos": 5,
+          "ms": 2479
+        }
+      ],
+      "pasa": true,
+      "pasaron": 3
+    },
+    {
+      "casoId": "cdmx",
+      "pregunta": "¿ha temblado cerca de la Ciudad de México?",
+      "intentos": [
+        {
+          "consulta": {
+            "regionId": "mexico",
+            "magnitudMinima": 2.5,
+            "dias": 90,
+            "orden": "reciente",
+            "limite": 20,
+            "lectura": "Entendí que quieres ver sismos recientes cerca de la Ciudad de México; usaré la región de México porque el catálogo no tiene un filtro específico para la capital.",
+            "noPuedo": "No puedo delimitar una distancia exacta alrededor de la Ciudad de México; la consulta solo puede usar la región amplia de México."
+          },
+          "lectura": "Entendí que quieres ver sismos recientes cerca de la Ciudad de México; usaré la región de México porque el catálogo no tiene un filtro específico para la capital.",
+          "noPuedo": "No puedo delimitar una distancia exacta alrededor de la Ciudad de México; la consulta solo puede usar la región amplia de México.",
+          "error": null,
+          "veredictos": [
+            {
+              "asercion": "region",
+              "descripcion": "Elige una región que cubre lo que preguntaron",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "México"
+            },
+            {
+              "asercion": "ventana",
+              "descripcion": "La ventana de tiempo alcanza para encontrar algo",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "90 días (mínimo 30)"
+            },
+            {
+              "asercion": "magnitud",
+              "descripcion": "No filtra tan alto que se quede sin datos",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "pide M2.5+ (tope M3)"
+            },
+            {
+              "asercion": "devuelve_algo",
+              "descripcion": "La consulta encuentra al menos un sismo",
+              "familia": "resultado",
+              "pasa": true,
+              "detalle": "20 eventos"
+            },
+            {
+              "asercion": "lugar_cubierto",
+              "descripcion": "Entre los resultados sale el sitio por el que preguntaron",
+              "familia": "resultado",
+              "pasa": true,
+              "detalle": "14 en «Mexico»"
+            }
+          ],
+          "pasa": true,
+          "pasaResultado": true,
+          "cuantosSismos": 20,
+          "ms": 3844
+        },
+        {
+          "consulta": {
+            "regionId": "brecha_guerrero",
+            "magnitudMinima": 2.5,
+            "dias": 90,
+            "orden": "reciente",
+            "limite": 500,
+            "lectura": "Entendí que quieres revisar los sismos recientes en la Brecha de Guerrero, la zona que suele sentirse cerca de la Ciudad de México.",
+            "noPuedo": "La consulta no puede filtrar por distancia exacta a la Ciudad de México ni indicar si un sismo fue percibido ahí."
+          },
+          "lectura": "Entendí que quieres revisar los sismos recientes en la Brecha de Guerrero, la zona que suele sentirse cerca de la Ciudad de México.",
+          "noPuedo": "La consulta no puede filtrar por distancia exacta a la Ciudad de México ni indicar si un sismo fue percibido ahí.",
+          "error": null,
+          "veredictos": [
+            {
+              "asercion": "region",
+              "descripcion": "Elige una región que cubre lo que preguntaron",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "Costa de Guerrero y Oaxaca"
+            },
+            {
+              "asercion": "ventana",
+              "descripcion": "La ventana de tiempo alcanza para encontrar algo",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "90 días (mínimo 30)"
+            },
+            {
+              "asercion": "magnitud",
+              "descripcion": "No filtra tan alto que se quede sin datos",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "pide M2.5+ (tope M3)"
+            },
+            {
+              "asercion": "devuelve_algo",
+              "descripcion": "La consulta encuentra al menos un sismo",
+              "familia": "resultado",
+              "pasa": true,
+              "detalle": "14 eventos"
+            },
+            {
+              "asercion": "lugar_cubierto",
+              "descripcion": "Entre los resultados sale el sitio por el que preguntaron",
+              "familia": "resultado",
+              "pasa": true,
+              "detalle": "14 en «Mexico»"
+            }
+          ],
+          "pasa": true,
+          "pasaResultado": true,
+          "cuantosSismos": 14,
+          "ms": 2324
+        },
+        {
+          "consulta": {
+            "regionId": "brecha_guerrero",
+            "magnitudMinima": 2.5,
+            "dias": 90,
+            "orden": "reciente",
+            "limite": 500,
+            "lectura": "Entendí que quieres revisar los sismos recientes en la Brecha de Guerrero, la zona que más influye en la Ciudad de México.",
+            "noPuedo": "“Cerca de la Ciudad de México” no existe como filtro de distancia en esta consulta; uso la Brecha de Guerrero como la región disponible más relevante."
+          },
+          "lectura": "Entendí que quieres revisar los sismos recientes en la Brecha de Guerrero, la zona que más influye en la Ciudad de México.",
+          "noPuedo": "“Cerca de la Ciudad de México” no existe como filtro de distancia en esta consulta; uso la Brecha de Guerrero como la región disponible más relevante.",
+          "error": null,
+          "veredictos": [
+            {
+              "asercion": "region",
+              "descripcion": "Elige una región que cubre lo que preguntaron",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "Costa de Guerrero y Oaxaca"
+            },
+            {
+              "asercion": "ventana",
+              "descripcion": "La ventana de tiempo alcanza para encontrar algo",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "90 días (mínimo 30)"
+            },
+            {
+              "asercion": "magnitud",
+              "descripcion": "No filtra tan alto que se quede sin datos",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "pide M2.5+ (tope M3)"
+            },
+            {
+              "asercion": "devuelve_algo",
+              "descripcion": "La consulta encuentra al menos un sismo",
+              "familia": "resultado",
+              "pasa": true,
+              "detalle": "14 eventos"
+            },
+            {
+              "asercion": "lugar_cubierto",
+              "descripcion": "Entre los resultados sale el sitio por el que preguntaron",
+              "familia": "resultado",
+              "pasa": true,
+              "detalle": "14 en «Mexico»"
+            }
+          ],
+          "pasa": true,
+          "pasaResultado": true,
+          "cuantosSismos": 14,
+          "ms": 2243
+        }
+      ],
+      "pasa": true,
+      "pasaron": 3
+    },
+    {
+      "casoId": "islandia",
+      "pregunta": "¿algo en Islandia?",
+      "intentos": [
+        {
+          "consulta": {
+            "regionId": "islandia",
+            "magnitudMinima": 2.5,
+            "dias": 90,
+            "orden": "reciente",
+            "limite": 500,
+            "lectura": "Entendí que quieres ver sismos recientes en Islandia.",
+            "noPuedo": ""
+          },
+          "lectura": "Entendí que quieres ver sismos recientes en Islandia.",
+          "noPuedo": "",
+          "error": null,
+          "veredictos": [
+            {
+              "asercion": "region",
+              "descripcion": "Elige una región que cubre lo que preguntaron",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "Islandia y dorsal atlántica"
+            },
+            {
+              "asercion": "ventana",
+              "descripcion": "La ventana de tiempo alcanza para encontrar algo",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "90 días (mínimo 30)"
+            },
+            {
+              "asercion": "magnitud",
+              "descripcion": "No filtra tan alto que se quede sin datos",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "pide M2.5+ (tope M3)"
+            },
+            {
+              "asercion": "devuelve_algo",
+              "descripcion": "La consulta encuentra al menos un sismo",
+              "familia": "resultado",
+              "pasa": true,
+              "detalle": "6 eventos"
+            },
+            {
+              "asercion": "lugar_cubierto",
+              "descripcion": "Entre los resultados sale el sitio por el que preguntaron",
+              "familia": "resultado",
+              "pasa": true,
+              "detalle": "6 en «Iceland»"
+            }
+          ],
+          "pasa": true,
+          "pasaResultado": true,
+          "cuantosSismos": 6,
+          "ms": 1832
+        },
+        {
+          "consulta": {
+            "regionId": "islandia",
+            "magnitudMinima": 2.5,
+            "dias": 90,
+            "orden": "reciente",
+            "limite": 500,
+            "lectura": "Buscas sismos recientes en Islandia.",
+            "noPuedo": ""
+          },
+          "lectura": "Buscas sismos recientes en Islandia.",
+          "noPuedo": "",
+          "error": null,
+          "veredictos": [
+            {
+              "asercion": "region",
+              "descripcion": "Elige una región que cubre lo que preguntaron",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "Islandia y dorsal atlántica"
+            },
+            {
+              "asercion": "ventana",
+              "descripcion": "La ventana de tiempo alcanza para encontrar algo",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "90 días (mínimo 30)"
+            },
+            {
+              "asercion": "magnitud",
+              "descripcion": "No filtra tan alto que se quede sin datos",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "pide M2.5+ (tope M3)"
+            },
+            {
+              "asercion": "devuelve_algo",
+              "descripcion": "La consulta encuentra al menos un sismo",
+              "familia": "resultado",
+              "pasa": true,
+              "detalle": "6 eventos"
+            },
+            {
+              "asercion": "lugar_cubierto",
+              "descripcion": "Entre los resultados sale el sitio por el que preguntaron",
+              "familia": "resultado",
+              "pasa": true,
+              "detalle": "6 en «Iceland»"
+            }
+          ],
+          "pasa": true,
+          "pasaResultado": true,
+          "cuantosSismos": 6,
+          "ms": 1510
+        },
+        {
+          "consulta": {
+            "regionId": "islandia",
+            "magnitudMinima": 2.5,
+            "dias": 90,
+            "orden": "reciente",
+            "limite": 500,
+            "lectura": "Buscas sismos recientes en Islandia.",
+            "noPuedo": ""
+          },
+          "lectura": "Buscas sismos recientes en Islandia.",
+          "noPuedo": "",
+          "error": null,
+          "veredictos": [
+            {
+              "asercion": "region",
+              "descripcion": "Elige una región que cubre lo que preguntaron",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "Islandia y dorsal atlántica"
+            },
+            {
+              "asercion": "ventana",
+              "descripcion": "La ventana de tiempo alcanza para encontrar algo",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "90 días (mínimo 30)"
+            },
+            {
+              "asercion": "magnitud",
+              "descripcion": "No filtra tan alto que se quede sin datos",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "pide M2.5+ (tope M3)"
+            },
+            {
+              "asercion": "devuelve_algo",
+              "descripcion": "La consulta encuentra al menos un sismo",
+              "familia": "resultado",
+              "pasa": true,
+              "detalle": "6 eventos"
+            },
+            {
+              "asercion": "lugar_cubierto",
+              "descripcion": "Entre los resultados sale el sitio por el que preguntaron",
+              "familia": "resultado",
+              "pasa": true,
+              "detalle": "6 en «Iceland»"
+            }
+          ],
+          "pasa": true,
+          "pasaResultado": true,
+          "cuantosSismos": 6,
+          "ms": 1171
+        }
+      ],
+      "pasa": true,
+      "pasaron": 3
+    },
+    {
+      "casoId": "chiapas_pasado",
+      "pregunta": "¿qué tan fuerte fue lo de Chiapas?",
+      "intentos": [
+        {
+          "consulta": {
+            "regionId": "mexico",
+            "magnitudMinima": 2.5,
+            "dias": 90,
+            "orden": "magnitud",
+            "limite": 10,
+            "lectura": "Entendí que quieres identificar qué tan fuerte fue el sismo de Chiapas que ya ocurrió, buscando los de mayor magnitud en México durante los últimos 90 días.",
+            "noPuedo": "La consulta no puede identificar con certeza un suceso concreto solo por decir “lo de Chiapas”, ni filtrar específicamente por el estado de Chiapas dentro de la región México."
+          },
+          "lectura": "Entendí que quieres identificar qué tan fuerte fue el sismo de Chiapas que ya ocurrió, buscando los de mayor magnitud en México durante los últimos 90 días.",
+          "noPuedo": "La consulta no puede identificar con certeza un suceso concreto solo por decir “lo de Chiapas”, ni filtrar específicamente por el estado de Chiapas dentro de la región México.",
+          "error": null,
+          "veredictos": [
+            {
+              "asercion": "region",
+              "descripcion": "Elige una región que cubre lo que preguntaron",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "México"
+            },
+            {
+              "asercion": "ventana",
+              "descripcion": "La ventana de tiempo alcanza para encontrar algo",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "90 días (mínimo 30)"
+            },
+            {
+              "asercion": "orden",
+              "descripcion": "Ordena por lo que la pregunta pide",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "ordena por magnitud (se esperaba magnitud)"
+            },
+            {
+              "asercion": "devuelve_algo",
+              "descripcion": "La consulta encuentra al menos un sismo",
+              "familia": "resultado",
+              "pasa": true,
+              "detalle": "10 eventos"
+            },
+            {
+              "asercion": "lugar_cubierto",
+              "descripcion": "Entre los resultados sale el sitio por el que preguntaron",
+              "familia": "resultado",
+              "pasa": true,
+              "detalle": "9 en «Mexico»"
+            }
+          ],
+          "pasa": true,
+          "pasaResultado": true,
+          "cuantosSismos": 10,
+          "ms": 4086
+        },
+        {
+          "consulta": {
+            "regionId": "mexico",
+            "magnitudMinima": 2.5,
+            "dias": 90,
+            "orden": "magnitud",
+            "limite": 1,
+            "lectura": "Entendí que quieres identificar qué tan fuerte fue el sismo ocurrido en Chiapas.",
+            "noPuedo": "La consulta no puede aislar específicamente Chiapas ni confirmar cuál evento concreto recuerdas; usaré México, los últimos 90 días y el resultado de mayor magnitud."
+          },
+          "lectura": "Entendí que quieres identificar qué tan fuerte fue el sismo ocurrido en Chiapas.",
+          "noPuedo": "La consulta no puede aislar específicamente Chiapas ni confirmar cuál evento concreto recuerdas; usaré México, los últimos 90 días y el resultado de mayor magnitud.",
+          "error": null,
+          "veredictos": [
+            {
+              "asercion": "region",
+              "descripcion": "Elige una región que cubre lo que preguntaron",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "México"
+            },
+            {
+              "asercion": "ventana",
+              "descripcion": "La ventana de tiempo alcanza para encontrar algo",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "90 días (mínimo 30)"
+            },
+            {
+              "asercion": "orden",
+              "descripcion": "Ordena por lo que la pregunta pide",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "ordena por magnitud (se esperaba magnitud)"
+            },
+            {
+              "asercion": "devuelve_algo",
+              "descripcion": "La consulta encuentra al menos un sismo",
+              "familia": "resultado",
+              "pasa": true,
+              "detalle": "1 eventos"
+            },
+            {
+              "asercion": "lugar_cubierto",
+              "descripcion": "Entre los resultados sale el sitio por el que preguntaron",
+              "familia": "resultado",
+              "pasa": true,
+              "detalle": "1 en «Mexico»"
+            }
+          ],
+          "pasa": true,
+          "pasaResultado": true,
+          "cuantosSismos": 1,
+          "ms": 2108
+        },
+        {
+          "consulta": {
+            "regionId": "mexico",
+            "magnitudMinima": 2.5,
+            "dias": 90,
+            "orden": "magnitud",
+            "limite": 10,
+            "lectura": "Entendí que quieres ver qué tan fuerte fue un sismo ocurrido en Chiapas, México.",
+            "noPuedo": "La consulta no puede identificar con certeza un evento específico solo con «lo de Chiapas»; mostrará los sismos de mayor magnitud en México durante los últimos 90 días."
+          },
+          "lectura": "Entendí que quieres ver qué tan fuerte fue un sismo ocurrido en Chiapas, México.",
+          "noPuedo": "La consulta no puede identificar con certeza un evento específico solo con «lo de Chiapas»; mostrará los sismos de mayor magnitud en México durante los últimos 90 días.",
+          "error": null,
+          "veredictos": [
+            {
+              "asercion": "region",
+              "descripcion": "Elige una región que cubre lo que preguntaron",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "México"
+            },
+            {
+              "asercion": "ventana",
+              "descripcion": "La ventana de tiempo alcanza para encontrar algo",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "90 días (mínimo 30)"
+            },
+            {
+              "asercion": "orden",
+              "descripcion": "Ordena por lo que la pregunta pide",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "ordena por magnitud (se esperaba magnitud)"
+            },
+            {
+              "asercion": "devuelve_algo",
+              "descripcion": "La consulta encuentra al menos un sismo",
+              "familia": "resultado",
+              "pasa": true,
+              "detalle": "10 eventos"
+            },
+            {
+              "asercion": "lugar_cubierto",
+              "descripcion": "Entre los resultados sale el sitio por el que preguntaron",
+              "familia": "resultado",
+              "pasa": true,
+              "detalle": "9 en «Mexico»"
+            }
+          ],
+          "pasa": true,
+          "pasaResultado": true,
+          "cuantosSismos": 10,
+          "ms": 2038
+        }
+      ],
+      "pasa": true,
+      "pasaron": 3
+    },
+    {
+      "casoId": "taiwan",
+      "pregunta": "¿ha temblado en Taiwán?",
+      "intentos": [
+        {
+          "consulta": {
+            "regionId": "taiwan",
+            "magnitudMinima": 2.5,
+            "dias": 90,
+            "orden": "reciente",
+            "limite": 500,
+            "lectura": "Entendí que quieres saber si ha habido sismos en Taiwán recientemente.",
+            "noPuedo": ""
+          },
+          "lectura": "Entendí que quieres saber si ha habido sismos en Taiwán recientemente.",
+          "noPuedo": "",
+          "error": null,
+          "veredictos": [
+            {
+              "asercion": "region",
+              "descripcion": "Elige una región que cubre lo que preguntaron",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "Taiwán y sur de China"
+            },
+            {
+              "asercion": "ventana",
+              "descripcion": "La ventana de tiempo alcanza para encontrar algo",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "90 días (mínimo 30)"
+            },
+            {
+              "asercion": "magnitud",
+              "descripcion": "No filtra tan alto que se quede sin datos",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "pide M2.5+ (tope M3)"
+            },
+            {
+              "asercion": "devuelve_algo",
+              "descripcion": "La consulta encuentra al menos un sismo",
+              "familia": "resultado",
+              "pasa": true,
+              "detalle": "37 eventos"
+            }
+          ],
+          "pasa": true,
+          "pasaResultado": true,
+          "cuantosSismos": 37,
+          "ms": 1721
+        },
+        {
+          "consulta": {
+            "regionId": "taiwan",
+            "magnitudMinima": 2.5,
+            "dias": 90,
+            "orden": "reciente",
+            "limite": 500,
+            "lectura": "Entendí que quieres saber si ha habido sismos en Taiwán recientemente.",
+            "noPuedo": ""
+          },
+          "lectura": "Entendí que quieres saber si ha habido sismos en Taiwán recientemente.",
+          "noPuedo": "",
+          "error": null,
+          "veredictos": [
+            {
+              "asercion": "region",
+              "descripcion": "Elige una región que cubre lo que preguntaron",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "Taiwán y sur de China"
+            },
+            {
+              "asercion": "ventana",
+              "descripcion": "La ventana de tiempo alcanza para encontrar algo",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "90 días (mínimo 30)"
+            },
+            {
+              "asercion": "magnitud",
+              "descripcion": "No filtra tan alto que se quede sin datos",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "pide M2.5+ (tope M3)"
+            },
+            {
+              "asercion": "devuelve_algo",
+              "descripcion": "La consulta encuentra al menos un sismo",
+              "familia": "resultado",
+              "pasa": true,
+              "detalle": "37 eventos"
+            }
+          ],
+          "pasa": true,
+          "pasaResultado": true,
+          "cuantosSismos": 37,
+          "ms": 2270
+        },
+        {
+          "consulta": {
+            "regionId": "taiwan",
+            "magnitudMinima": 2.5,
+            "dias": 90,
+            "orden": "reciente",
+            "limite": 500,
+            "lectura": "Entendí que quieres saber si ha habido sismos en Taiwán recientemente.",
+            "noPuedo": ""
+          },
+          "lectura": "Entendí que quieres saber si ha habido sismos en Taiwán recientemente.",
+          "noPuedo": "",
+          "error": null,
+          "veredictos": [
+            {
+              "asercion": "region",
+              "descripcion": "Elige una región que cubre lo que preguntaron",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "Taiwán y sur de China"
+            },
+            {
+              "asercion": "ventana",
+              "descripcion": "La ventana de tiempo alcanza para encontrar algo",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "90 días (mínimo 30)"
+            },
+            {
+              "asercion": "magnitud",
+              "descripcion": "No filtra tan alto que se quede sin datos",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "pide M2.5+ (tope M3)"
+            },
+            {
+              "asercion": "devuelve_algo",
+              "descripcion": "La consulta encuentra al menos un sismo",
+              "familia": "resultado",
+              "pasa": true,
+              "detalle": "37 eventos"
+            }
+          ],
+          "pasa": true,
+          "pasaResultado": true,
+          "cuantosSismos": 37,
+          "ms": 1270
+        }
+      ],
+      "pasa": true,
+      "pasaron": 3
+    },
+    {
+      "casoId": "turquia",
+      "pregunta": "¿tembló en Turquía?",
+      "intentos": [
+        {
+          "consulta": {
+            "regionId": "mediterraneo",
+            "magnitudMinima": 2.5,
+            "dias": 90,
+            "orden": "reciente",
+            "limite": 500,
+            "lectura": "Entendí que quieres revisar si ha habido sismos en Turquía recientemente; usaré la región del Mediterráneo y Turquía con una ventana amplia.",
+            "noPuedo": ""
+          },
+          "lectura": "Entendí que quieres revisar si ha habido sismos en Turquía recientemente; usaré la región del Mediterráneo y Turquía con una ventana amplia.",
+          "noPuedo": "",
+          "error": null,
+          "veredictos": [
+            {
+              "asercion": "region",
+              "descripcion": "Elige una región que cubre lo que preguntaron",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "Mediterráneo y Turquía"
+            },
+            {
+              "asercion": "ventana",
+              "descripcion": "La ventana de tiempo alcanza para encontrar algo",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "90 días (mínimo 30)"
+            },
+            {
+              "asercion": "magnitud",
+              "descripcion": "No filtra tan alto que se quede sin datos",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "pide M2.5+ (tope M3)"
+            },
+            {
+              "asercion": "devuelve_algo",
+              "descripcion": "La consulta encuentra al menos un sismo",
+              "familia": "resultado",
+              "pasa": true,
+              "detalle": "86 eventos"
+            }
+          ],
+          "pasa": true,
+          "pasaResultado": true,
+          "cuantosSismos": 86,
+          "ms": 2695
+        },
+        {
+          "consulta": {
+            "regionId": "mediterraneo",
+            "magnitudMinima": 2.5,
+            "dias": 90,
+            "orden": "reciente",
+            "limite": 500,
+            "lectura": "Entendí que preguntas si ha habido sismos en Turquía recientemente.",
+            "noPuedo": ""
+          },
+          "lectura": "Entendí que preguntas si ha habido sismos en Turquía recientemente.",
+          "noPuedo": "",
+          "error": null,
+          "veredictos": [
+            {
+              "asercion": "region",
+              "descripcion": "Elige una región que cubre lo que preguntaron",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "Mediterráneo y Turquía"
+            },
+            {
+              "asercion": "ventana",
+              "descripcion": "La ventana de tiempo alcanza para encontrar algo",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "90 días (mínimo 30)"
+            },
+            {
+              "asercion": "magnitud",
+              "descripcion": "No filtra tan alto que se quede sin datos",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "pide M2.5+ (tope M3)"
+            },
+            {
+              "asercion": "devuelve_algo",
+              "descripcion": "La consulta encuentra al menos un sismo",
+              "familia": "resultado",
+              "pasa": true,
+              "detalle": "86 eventos"
+            }
+          ],
+          "pasa": true,
+          "pasaResultado": true,
+          "cuantosSismos": 86,
+          "ms": 1793
+        },
+        {
+          "consulta": {
+            "regionId": "mediterraneo",
+            "magnitudMinima": 2.5,
+            "dias": 90,
+            "orden": "reciente",
+            "limite": 500,
+            "lectura": "Entendí que quieres revisar si ha habido sismos recientes en Turquía; como no indicaste un periodo, buscaré los últimos 90 días en la región del Mediterráneo y Turquía.",
+            "noPuedo": ""
+          },
+          "lectura": "Entendí que quieres revisar si ha habido sismos recientes en Turquía; como no indicaste un periodo, buscaré los últimos 90 días en la región del Mediterráneo y Turquía.",
+          "noPuedo": "",
+          "error": null,
+          "veredictos": [
+            {
+              "asercion": "region",
+              "descripcion": "Elige una región que cubre lo que preguntaron",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "Mediterráneo y Turquía"
+            },
+            {
+              "asercion": "ventana",
+              "descripcion": "La ventana de tiempo alcanza para encontrar algo",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "90 días (mínimo 30)"
+            },
+            {
+              "asercion": "magnitud",
+              "descripcion": "No filtra tan alto que se quede sin datos",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "pide M2.5+ (tope M3)"
+            },
+            {
+              "asercion": "devuelve_algo",
+              "descripcion": "La consulta encuentra al menos un sismo",
+              "familia": "resultado",
+              "pasa": true,
+              "detalle": "86 eventos"
+            }
+          ],
+          "pasa": true,
+          "pasaResultado": true,
+          "cuantosSismos": 86,
+          "ms": 1807
+        }
+      ],
+      "pasa": true,
+      "pasaron": 3
+    },
+    {
+      "casoId": "chile_fuertes",
+      "pregunta": "los sismos más fuertes de Chile",
+      "intentos": [
+        {
+          "consulta": {
+            "regionId": "chile_peru",
+            "magnitudMinima": 2.5,
+            "dias": 90,
+            "orden": "magnitud",
+            "limite": 500,
+            "lectura": "Entendí que buscas los sismos más fuertes de Chile; usaré la región Chile y Perú, con datos de los últimos 90 días.",
+            "noPuedo": "La región disponible también incluye Perú, así que no puedo limitar la consulta únicamente a Chile."
+          },
+          "lectura": "Entendí que buscas los sismos más fuertes de Chile; usaré la región Chile y Perú, con datos de los últimos 90 días.",
+          "noPuedo": "La región disponible también incluye Perú, así que no puedo limitar la consulta únicamente a Chile.",
+          "error": null,
+          "veredictos": [
+            {
+              "asercion": "region",
+              "descripcion": "Elige una región que cubre lo que preguntaron",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "Chile y Perú"
+            },
+            {
+              "asercion": "ventana",
+              "descripcion": "La ventana de tiempo alcanza para encontrar algo",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "90 días (mínimo 30)"
+            },
+            {
+              "asercion": "orden",
+              "descripcion": "Ordena por lo que la pregunta pide",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "ordena por magnitud (se esperaba magnitud)"
+            },
+            {
+              "asercion": "devuelve_algo",
+              "descripcion": "La consulta encuentra al menos un sismo",
+              "familia": "resultado",
+              "pasa": true,
+              "detalle": "254 eventos"
+            },
+            {
+              "asercion": "lugar_cubierto",
+              "descripcion": "Entre los resultados sale el sitio por el que preguntaron",
+              "familia": "resultado",
+              "pasa": true,
+              "detalle": "149 en «Chile»"
+            }
+          ],
+          "pasa": true,
+          "pasaResultado": true,
+          "cuantosSismos": 254,
+          "ms": 6703
+        },
+        {
+          "consulta": {
+            "regionId": "chile_peru",
+            "magnitudMinima": 2.5,
+            "dias": 90,
+            "orden": "magnitud",
+            "limite": 10,
+            "lectura": "Entendí que buscas los sismos más fuertes de Chile, usando la región Chile y Perú, en los últimos 90 días.",
+            "noPuedo": "La región disponible también incluye Perú; no se puede filtrar únicamente Chile."
+          },
+          "lectura": "Entendí que buscas los sismos más fuertes de Chile, usando la región Chile y Perú, en los últimos 90 días.",
+          "noPuedo": "La región disponible también incluye Perú; no se puede filtrar únicamente Chile.",
+          "error": null,
+          "veredictos": [
+            {
+              "asercion": "region",
+              "descripcion": "Elige una región que cubre lo que preguntaron",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "Chile y Perú"
+            },
+            {
+              "asercion": "ventana",
+              "descripcion": "La ventana de tiempo alcanza para encontrar algo",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "90 días (mínimo 30)"
+            },
+            {
+              "asercion": "orden",
+              "descripcion": "Ordena por lo que la pregunta pide",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "ordena por magnitud (se esperaba magnitud)"
+            },
+            {
+              "asercion": "devuelve_algo",
+              "descripcion": "La consulta encuentra al menos un sismo",
+              "familia": "resultado",
+              "pasa": true,
+              "detalle": "10 eventos"
+            },
+            {
+              "asercion": "lugar_cubierto",
+              "descripcion": "Entre los resultados sale el sitio por el que preguntaron",
+              "familia": "resultado",
+              "pasa": true,
+              "detalle": "4 en «Chile»"
+            }
+          ],
+          "pasa": true,
+          "pasaResultado": true,
+          "cuantosSismos": 10,
+          "ms": 2747
+        },
+        {
+          "consulta": {
+            "regionId": "chile_peru",
+            "magnitudMinima": 2.5,
+            "dias": 90,
+            "orden": "magnitud",
+            "limite": 500,
+            "lectura": "Entendí que buscas los sismos más fuertes de Chile; usaré la región de Chile y Perú, con los últimos 90 días por tratarse de una región concreta sin periodo indicado.",
+            "noPuedo": "No puedo separar únicamente Chile de Perú dentro de la región disponible; la consulta incluye ambos países."
+          },
+          "lectura": "Entendí que buscas los sismos más fuertes de Chile; usaré la región de Chile y Perú, con los últimos 90 días por tratarse de una región concreta sin periodo indicado.",
+          "noPuedo": "No puedo separar únicamente Chile de Perú dentro de la región disponible; la consulta incluye ambos países.",
+          "error": null,
+          "veredictos": [
+            {
+              "asercion": "region",
+              "descripcion": "Elige una región que cubre lo que preguntaron",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "Chile y Perú"
+            },
+            {
+              "asercion": "ventana",
+              "descripcion": "La ventana de tiempo alcanza para encontrar algo",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "90 días (mínimo 30)"
+            },
+            {
+              "asercion": "orden",
+              "descripcion": "Ordena por lo que la pregunta pide",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "ordena por magnitud (se esperaba magnitud)"
+            },
+            {
+              "asercion": "devuelve_algo",
+              "descripcion": "La consulta encuentra al menos un sismo",
+              "familia": "resultado",
+              "pasa": true,
+              "detalle": "254 eventos"
+            },
+            {
+              "asercion": "lugar_cubierto",
+              "descripcion": "Entre los resultados sale el sitio por el que preguntaron",
+              "familia": "resultado",
+              "pasa": true,
+              "detalle": "149 en «Chile»"
+            }
+          ],
+          "pasa": true,
+          "pasaResultado": true,
+          "cuantosSismos": 254,
+          "ms": 1889
+        }
+      ],
+      "pasa": true,
+      "pasaron": 3
+    },
+    {
+      "casoId": "pacifico_m5",
+      "pregunta": "sismos de más de 5 en el pacífico este mes",
+      "intentos": [
+        {
+          "consulta": {
+            "regionId": "anillo_de_fuego",
+            "magnitudMinima": 5,
+            "dias": 30,
+            "orden": "reciente",
+            "limite": 500,
+            "lectura": "Entendí que buscas los sismos de magnitud mayor a 5 ocurridos este mes en el Pacífico, usando la región del Cinturón de Fuego como aproximación.",
+            "noPuedo": "“Pacífico” no se puede delimitar exactamente con las regiones disponibles; anillo_de_fuego es la aproximación más cercana, pero también incluye zonas terrestres y no cubre todo el océano Pacífico."
+          },
+          "lectura": "Entendí que buscas los sismos de magnitud mayor a 5 ocurridos este mes en el Pacífico, usando la región del Cinturón de Fuego como aproximación.",
+          "noPuedo": "“Pacífico” no se puede delimitar exactamente con las regiones disponibles; anillo_de_fuego es la aproximación más cercana, pero también incluye zonas terrestres y no cubre todo el océano Pacífico.",
+          "error": null,
+          "veredictos": [
+            {
+              "asercion": "region",
+              "descripcion": "Elige una región que cubre lo que preguntaron",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "Cinturón de Fuego"
+            },
+            {
+              "asercion": "ventana",
+              "descripcion": "La ventana de tiempo alcanza para encontrar algo",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "30 días (mínimo 28)"
+            },
+            {
+              "asercion": "magnitud",
+              "descripcion": "No filtra tan alto que se quede sin datos",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "pide M5+ (tope M5)"
+            },
+            {
+              "asercion": "magnitud_pedida",
+              "descripcion": "Respeta la magnitud que le pidieron explícitamente",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "pide M5+ (se pidió M5+)"
+            },
+            {
+              "asercion": "devuelve_algo",
+              "descripcion": "La consulta encuentra al menos un sismo",
+              "familia": "resultado",
+              "pasa": true,
+              "detalle": "183 eventos"
+            }
+          ],
+          "pasa": true,
+          "pasaResultado": true,
+          "cuantosSismos": 183,
+          "ms": 2969
+        },
+        {
+          "consulta": {
+            "regionId": "anillo_de_fuego",
+            "magnitudMinima": 5,
+            "dias": 30,
+            "orden": "reciente",
+            "limite": 500,
+            "lectura": "Entendí que buscas los sismos de magnitud mayor a 5 en el Pacífico durante este mes.",
+            "noPuedo": "El Pacífico completo no se puede expresar con precisión: la región disponible más cercana es el Cinturón de Fuego, que cubre varias zonas alrededor del Pacífico."
+          },
+          "lectura": "Entendí que buscas los sismos de magnitud mayor a 5 en el Pacífico durante este mes.",
+          "noPuedo": "El Pacífico completo no se puede expresar con precisión: la región disponible más cercana es el Cinturón de Fuego, que cubre varias zonas alrededor del Pacífico.",
+          "error": null,
+          "veredictos": [
+            {
+              "asercion": "region",
+              "descripcion": "Elige una región que cubre lo que preguntaron",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "Cinturón de Fuego"
+            },
+            {
+              "asercion": "ventana",
+              "descripcion": "La ventana de tiempo alcanza para encontrar algo",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "30 días (mínimo 28)"
+            },
+            {
+              "asercion": "magnitud",
+              "descripcion": "No filtra tan alto que se quede sin datos",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "pide M5+ (tope M5)"
+            },
+            {
+              "asercion": "magnitud_pedida",
+              "descripcion": "Respeta la magnitud que le pidieron explícitamente",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "pide M5+ (se pidió M5+)"
+            },
+            {
+              "asercion": "devuelve_algo",
+              "descripcion": "La consulta encuentra al menos un sismo",
+              "familia": "resultado",
+              "pasa": true,
+              "detalle": "183 eventos"
+            }
+          ],
+          "pasa": true,
+          "pasaResultado": true,
+          "cuantosSismos": 183,
+          "ms": 1805
+        },
+        {
+          "consulta": {
+            "regionId": "anillo_de_fuego",
+            "magnitudMinima": 5,
+            "dias": 30,
+            "orden": "reciente",
+            "limite": 500,
+            "lectura": "Entendí que quieres ver los sismos de magnitud mayor a 5 ocurridos este mes en el Pacífico.",
+            "noPuedo": "“Pacífico” no se puede delimitar con precisión: usaré la región Cinturón de Fuego, que cubre varias zonas alrededor del océano Pacífico."
+          },
+          "lectura": "Entendí que quieres ver los sismos de magnitud mayor a 5 ocurridos este mes en el Pacífico.",
+          "noPuedo": "“Pacífico” no se puede delimitar con precisión: usaré la región Cinturón de Fuego, que cubre varias zonas alrededor del océano Pacífico.",
+          "error": null,
+          "veredictos": [
+            {
+              "asercion": "region",
+              "descripcion": "Elige una región que cubre lo que preguntaron",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "Cinturón de Fuego"
+            },
+            {
+              "asercion": "ventana",
+              "descripcion": "La ventana de tiempo alcanza para encontrar algo",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "30 días (mínimo 28)"
+            },
+            {
+              "asercion": "magnitud",
+              "descripcion": "No filtra tan alto que se quede sin datos",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "pide M5+ (tope M5)"
+            },
+            {
+              "asercion": "magnitud_pedida",
+              "descripcion": "Respeta la magnitud que le pidieron explícitamente",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "pide M5+ (se pidió M5+)"
+            },
+            {
+              "asercion": "devuelve_algo",
+              "descripcion": "La consulta encuentra al menos un sismo",
+              "familia": "resultado",
+              "pasa": true,
+              "detalle": "183 eventos"
+            }
+          ],
+          "pasa": true,
+          "pasaResultado": true,
+          "cuantosSismos": 183,
+          "ms": 1845
+        }
+      ],
+      "pasa": true,
+      "pasaron": 3
+    },
+    {
+      "casoId": "imposible_m9",
+      "pregunta": "terremotos de más de 9 grados esta semana",
+      "intentos": [
+        {
+          "consulta": {
+            "regionId": "mundo",
+            "magnitudMinima": 9,
+            "dias": 7,
+            "orden": "magnitud",
+            "limite": 500,
+            "lectura": "Entendí que buscas los terremotos de magnitud mayor a 9 ocurridos esta semana en todo el mundo.",
+            "noPuedo": ""
+          },
+          "lectura": "Entendí que buscas los terremotos de magnitud mayor a 9 ocurridos esta semana en todo el mundo.",
+          "noPuedo": "",
+          "error": null,
+          "veredictos": [
+            {
+              "asercion": "region",
+              "descripcion": "Elige una región que cubre lo que preguntaron",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "Todo el mundo"
+            },
+            {
+              "asercion": "magnitud_pedida",
+              "descripcion": "Respeta la magnitud que le pidieron explícitamente",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "pide M9+ (se pidió M9+)"
+            },
+            {
+              "asercion": "vacio_cuando_toca",
+              "descripcion": "Devuelve cero cuando cero es la respuesta correcta",
+              "familia": "resultado",
+              "pasa": true,
+              "detalle": "0 eventos (se esperaban 0)"
+            }
+          ],
+          "pasa": true,
+          "pasaResultado": true,
+          "cuantosSismos": 0,
+          "ms": 2281
+        },
+        {
+          "consulta": {
+            "regionId": "mundo",
+            "magnitudMinima": 9,
+            "dias": 7,
+            "orden": "magnitud",
+            "limite": 500,
+            "lectura": "Entendí que buscas los terremotos de magnitud mayor a 9 ocurridos esta semana en todo el mundo.",
+            "noPuedo": ""
+          },
+          "lectura": "Entendí que buscas los terremotos de magnitud mayor a 9 ocurridos esta semana en todo el mundo.",
+          "noPuedo": "",
+          "error": null,
+          "veredictos": [
+            {
+              "asercion": "region",
+              "descripcion": "Elige una región que cubre lo que preguntaron",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "Todo el mundo"
+            },
+            {
+              "asercion": "magnitud_pedida",
+              "descripcion": "Respeta la magnitud que le pidieron explícitamente",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "pide M9+ (se pidió M9+)"
+            },
+            {
+              "asercion": "vacio_cuando_toca",
+              "descripcion": "Devuelve cero cuando cero es la respuesta correcta",
+              "familia": "resultado",
+              "pasa": true,
+              "detalle": "0 eventos (se esperaban 0)"
+            }
+          ],
+          "pasa": true,
+          "pasaResultado": true,
+          "cuantosSismos": 0,
+          "ms": 1180
+        },
+        {
+          "consulta": {
+            "regionId": "mundo",
+            "magnitudMinima": 9,
+            "dias": 7,
+            "orden": "magnitud",
+            "limite": 500,
+            "lectura": "Entendí que quieres ver los terremotos de magnitud mayor a 9 registrados en todo el mundo durante esta semana.",
+            "noPuedo": ""
+          },
+          "lectura": "Entendí que quieres ver los terremotos de magnitud mayor a 9 registrados en todo el mundo durante esta semana.",
+          "noPuedo": "",
+          "error": null,
+          "veredictos": [
+            {
+              "asercion": "region",
+              "descripcion": "Elige una región que cubre lo que preguntaron",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "Todo el mundo"
+            },
+            {
+              "asercion": "magnitud_pedida",
+              "descripcion": "Respeta la magnitud que le pidieron explícitamente",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "pide M9+ (se pidió M9+)"
+            },
+            {
+              "asercion": "vacio_cuando_toca",
+              "descripcion": "Devuelve cero cuando cero es la respuesta correcta",
+              "familia": "resultado",
+              "pasa": true,
+              "detalle": "0 eventos (se esperaban 0)"
+            }
+          ],
+          "pasa": true,
+          "pasaResultado": true,
+          "cuantosSismos": 0,
+          "ms": 1429
+        }
+      ],
+      "pasa": true,
+      "pasaron": 3
+    },
+    {
+      "casoId": "fuera_del_planeta",
+      "pregunta": "¿ha temblado en Marte?",
+      "intentos": [
+        {
+          "consulta": {
+            "regionId": "mundo",
+            "magnitudMinima": 4.5,
+            "dias": 7,
+            "orden": "reciente",
+            "limite": 50,
+            "lectura": "Entendí que preguntas si ha ocurrido actividad sísmica en Marte, pero el catálogo disponible cubre sismos en la Tierra.",
+            "noPuedo": "No se puede consultar Marte con este catálogo del USGS: las regiones disponibles son terrestres."
+          },
+          "lectura": "Entendí que preguntas si ha ocurrido actividad sísmica en Marte, pero el catálogo disponible cubre sismos en la Tierra.",
+          "noPuedo": "No se puede consultar Marte con este catálogo del USGS: las regiones disponibles son terrestres.",
+          "error": null,
+          "veredictos": [
+            {
+              "asercion": "region",
+              "descripcion": "Elige una región que cubre lo que preguntaron",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "Todo el mundo"
+            }
+          ],
+          "pasa": true,
+          "pasaResultado": true,
+          "cuantosSismos": 50,
+          "ms": 2115
+        },
+        {
+          "consulta": {
+            "regionId": "mundo",
+            "magnitudMinima": 4.5,
+            "dias": 7,
+            "orden": "reciente",
+            "limite": 50,
+            "lectura": "Entendí que preguntas si ha habido sismos en Marte, pero el catálogo consultable corresponde a sismos en la Tierra.",
+            "noPuedo": "No puedo consultar sismos en Marte: las únicas regiones disponibles son terrestres y el catálogo del USGS usado aquí no expresa cuerpos celestes distintos de la Tierra."
+          },
+          "lectura": "Entendí que preguntas si ha habido sismos en Marte, pero el catálogo consultable corresponde a sismos en la Tierra.",
+          "noPuedo": "No puedo consultar sismos en Marte: las únicas regiones disponibles son terrestres y el catálogo del USGS usado aquí no expresa cuerpos celestes distintos de la Tierra.",
+          "error": null,
+          "veredictos": [
+            {
+              "asercion": "region",
+              "descripcion": "Elige una región que cubre lo que preguntaron",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "Todo el mundo"
+            }
+          ],
+          "pasa": true,
+          "pasaResultado": true,
+          "cuantosSismos": 50,
+          "ms": 2811
+        },
+        {
+          "consulta": {
+            "regionId": "mundo",
+            "magnitudMinima": 4.5,
+            "dias": 7,
+            "orden": "reciente",
+            "limite": 50,
+            "lectura": "Entendí que preguntas si ha habido sismos en Marte, pero el catálogo consultable corresponde a sismos en la Tierra.",
+            "noPuedo": "No puedo expresar Marte: las únicas regiones disponibles son terrestres y el catálogo del USGS para esta consulta no filtra sismos marcianos."
+          },
+          "lectura": "Entendí que preguntas si ha habido sismos en Marte, pero el catálogo consultable corresponde a sismos en la Tierra.",
+          "noPuedo": "No puedo expresar Marte: las únicas regiones disponibles son terrestres y el catálogo del USGS para esta consulta no filtra sismos marcianos.",
+          "error": null,
+          "veredictos": [
+            {
+              "asercion": "region",
+              "descripcion": "Elige una región que cubre lo que preguntaron",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "Todo el mundo"
+            }
+          ],
+          "pasa": true,
+          "pasaResultado": true,
+          "cuantosSismos": 50,
+          "ms": 2130
+        }
+      ],
+      "pasa": true,
+      "pasaron": 3
+    },
+    {
+      "casoId": "profundidad",
+      "pregunta": "¿ha habido sismos profundos, de más de 300 km?",
+      "intentos": [
+        {
+          "consulta": {
+            "regionId": "mundo",
+            "magnitudMinima": 4.5,
+            "dias": 7,
+            "orden": "reciente",
+            "limite": 500,
+            "lectura": "Entendí que quieres revisar los sismos registrados en todo el mundo durante los últimos 7 días para identificar si hubo sismos profundos, de más de 300 km.",
+            "noPuedo": "La consulta no puede filtrar ni informar la profundidad de los sismos; solo puede filtrar región, magnitud mínima, ventana de días, orden y cantidad de resultados."
+          },
+          "lectura": "Entendí que quieres revisar los sismos registrados en todo el mundo durante los últimos 7 días para identificar si hubo sismos profundos, de más de 300 km.",
+          "noPuedo": "La consulta no puede filtrar ni informar la profundidad de los sismos; solo puede filtrar región, magnitud mínima, ventana de días, orden y cantidad de resultados.",
+          "error": null,
+          "veredictos": [
+            {
+              "asercion": "region",
+              "descripcion": "Elige una región que cubre lo que preguntaron",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "Todo el mundo"
+            },
+            {
+              "asercion": "admite_imposible",
+              "descripcion": "Dice qué parte de la petición no sabe expresar",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "lo admitió: «La consulta no puede filtrar ni informar la profundidad de los sismos;»"
+            },
+            {
+              "asercion": "devuelve_algo",
+              "descripcion": "La consulta encuentra al menos un sismo",
+              "familia": "resultado",
+              "pasa": true,
+              "detalle": "97 eventos"
+            }
+          ],
+          "pasa": true,
+          "pasaResultado": true,
+          "cuantosSismos": 97,
+          "ms": 2110
+        },
+        {
+          "consulta": {
+            "regionId": "mundo",
+            "magnitudMinima": 4.5,
+            "dias": 7,
+            "orden": "reciente",
+            "limite": 500,
+            "lectura": "Entendí que quieres revisar los sismos recientes en todo el mundo para identificar si ha habido eventos profundos, de más de 300 km.",
+            "noPuedo": "La profundidad no se puede filtrar ni consultar con esta herramienta; solo puedo mostrar sismos por región, magnitud, periodo, orden y límite."
+          },
+          "lectura": "Entendí que quieres revisar los sismos recientes en todo el mundo para identificar si ha habido eventos profundos, de más de 300 km.",
+          "noPuedo": "La profundidad no se puede filtrar ni consultar con esta herramienta; solo puedo mostrar sismos por región, magnitud, periodo, orden y límite.",
+          "error": null,
+          "veredictos": [
+            {
+              "asercion": "region",
+              "descripcion": "Elige una región que cubre lo que preguntaron",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "Todo el mundo"
+            },
+            {
+              "asercion": "admite_imposible",
+              "descripcion": "Dice qué parte de la petición no sabe expresar",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "lo admitió: «La profundidad no se puede filtrar ni consultar con esta herramienta; »"
+            },
+            {
+              "asercion": "devuelve_algo",
+              "descripcion": "La consulta encuentra al menos un sismo",
+              "familia": "resultado",
+              "pasa": true,
+              "detalle": "97 eventos"
+            }
+          ],
+          "pasa": true,
+          "pasaResultado": true,
+          "cuantosSismos": 97,
+          "ms": 2164
+        },
+        {
+          "consulta": {
+            "regionId": "mundo",
+            "magnitudMinima": 4.5,
+            "dias": 7,
+            "orden": "reciente",
+            "limite": 500,
+            "lectura": "Entendí que quieres revisar los sismos recientes en todo el mundo para saber si ha habido alguno profundo, de más de 300 km.",
+            "noPuedo": "La consulta no puede filtrar ni informar la profundidad de los sismos; solo puede mostrar eventos por región, magnitud, tiempo y orden."
+          },
+          "lectura": "Entendí que quieres revisar los sismos recientes en todo el mundo para saber si ha habido alguno profundo, de más de 300 km.",
+          "noPuedo": "La consulta no puede filtrar ni informar la profundidad de los sismos; solo puede mostrar eventos por región, magnitud, tiempo y orden.",
+          "error": null,
+          "veredictos": [
+            {
+              "asercion": "region",
+              "descripcion": "Elige una región que cubre lo que preguntaron",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "Todo el mundo"
+            },
+            {
+              "asercion": "admite_imposible",
+              "descripcion": "Dice qué parte de la petición no sabe expresar",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "lo admitió: «La consulta no puede filtrar ni informar la profundidad de los sismos;»"
+            },
+            {
+              "asercion": "devuelve_algo",
+              "descripcion": "La consulta encuentra al menos un sismo",
+              "familia": "resultado",
+              "pasa": true,
+              "detalle": "97 eventos"
+            }
+          ],
+          "pasa": true,
+          "pasaResultado": true,
+          "cuantosSismos": 97,
+          "ms": 2609
+        }
+      ],
+      "pasa": true,
+      "pasaron": 3
+    },
+    {
+      "casoId": "dos_regiones",
+      "pregunta": "¿tembló en Chile o en Japón?",
+      "intentos": [
+        {
+          "consulta": {
+            "regionId": "mundo",
+            "magnitudMinima": 4.5,
+            "dias": 7,
+            "orden": "reciente",
+            "limite": 100,
+            "lectura": "Entendí que quieres revisar los sismos recientes en Chile o en Japón; como la consulta no puede combinar ambas regiones, usaré el mundo como aproximación.",
+            "noPuedo": "No puedo filtrar Chile y Japón a la vez en una sola consulta; el catálogo solo permite una región por consulta."
+          },
+          "lectura": "Entendí que quieres revisar los sismos recientes en Chile o en Japón; como la consulta no puede combinar ambas regiones, usaré el mundo como aproximación.",
+          "noPuedo": "No puedo filtrar Chile y Japón a la vez en una sola consulta; el catálogo solo permite una región por consulta.",
+          "error": null,
+          "veredictos": [
+            {
+              "asercion": "region",
+              "descripcion": "Elige una región que cubre lo que preguntaron",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "Todo el mundo"
+            },
+            {
+              "asercion": "admite_imposible",
+              "descripcion": "Dice qué parte de la petición no sabe expresar",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "lo admitió: «No puedo filtrar Chile y Japón a la vez en una sola consulta; el catál»"
+            }
+          ],
+          "pasa": true,
+          "pasaResultado": true,
+          "cuantosSismos": 97,
+          "ms": 3717
+        },
+        {
+          "consulta": {
+            "regionId": "mundo",
+            "magnitudMinima": 4.5,
+            "dias": 7,
+            "orden": "reciente",
+            "limite": 500,
+            "lectura": "Entendí que quieres revisar si hubo sismos recientes en Chile o en Japón; como la consulta no puede combinar esas dos regiones, usaré resultados recientes de todo el mundo.",
+            "noPuedo": "No se pueden consultar Chile/Perú y Japón a la vez ni limitar los resultados mundiales únicamente a esas dos regiones."
+          },
+          "lectura": "Entendí que quieres revisar si hubo sismos recientes en Chile o en Japón; como la consulta no puede combinar esas dos regiones, usaré resultados recientes de todo el mundo.",
+          "noPuedo": "No se pueden consultar Chile/Perú y Japón a la vez ni limitar los resultados mundiales únicamente a esas dos regiones.",
+          "error": null,
+          "veredictos": [
+            {
+              "asercion": "region",
+              "descripcion": "Elige una región que cubre lo que preguntaron",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "Todo el mundo"
+            },
+            {
+              "asercion": "admite_imposible",
+              "descripcion": "Dice qué parte de la petición no sabe expresar",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "lo admitió: «No se pueden consultar Chile/Perú y Japón a la vez ni limitar los resu»"
+            }
+          ],
+          "pasa": true,
+          "pasaResultado": true,
+          "cuantosSismos": 97,
+          "ms": 2623
+        },
+        {
+          "consulta": {
+            "regionId": "anillo_de_fuego",
+            "magnitudMinima": 2.5,
+            "dias": 90,
+            "orden": "reciente",
+            "limite": 50,
+            "lectura": "Entendí que quieres revisar si ha habido sismos en Chile o Japón; como la consulta no puede separar ambas regiones, usaré el Anillo de Fuego, que las incluye junto con otras zonas del Pacífico.",
+            "noPuedo": "No puedo filtrar Chile y Japón a la vez ni distinguir los resultados de cada país con una sola consulta; Anillo de Fuego también incluye otros lugares."
+          },
+          "lectura": "Entendí que quieres revisar si ha habido sismos en Chile o Japón; como la consulta no puede separar ambas regiones, usaré el Anillo de Fuego, que las incluye junto con otras zonas del Pacífico.",
+          "noPuedo": "No puedo filtrar Chile y Japón a la vez ni distinguir los resultados de cada país con una sola consulta; Anillo de Fuego también incluye otros lugares.",
+          "error": null,
+          "veredictos": [
+            {
+              "asercion": "region",
+              "descripcion": "Elige una región que cubre lo que preguntaron",
+              "familia": "interpretacion",
+              "pasa": false,
+              "detalle": "eligió Cinturón de Fuego; se esperaba chile_peru o japon o mundo"
+            },
+            {
+              "asercion": "admite_imposible",
+              "descripcion": "Dice qué parte de la petición no sabe expresar",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "lo admitió: «No puedo filtrar Chile y Japón a la vez ni distinguir los resultados d»"
+            }
+          ],
+          "pasa": false,
+          "pasaResultado": true,
+          "cuantosSismos": 50,
+          "ms": 4015
+        }
+      ],
+      "pasa": false,
+      "pasaron": 2
+    },
+    {
+      "casoId": "prediccion",
+      "pregunta": "¿va a temblar mañana en la Ciudad de México?",
+      "intentos": [
+        {
+          "consulta": {
+            "regionId": "mexico",
+            "magnitudMinima": 2.5,
+            "dias": 1,
+            "orden": "reciente",
+            "limite": 50,
+            "lectura": "Entendí que preguntas si habrá un sismo mañana en la Ciudad de México; la consulta muestra los sismos que ya ocurrieron en México durante el último día.",
+            "noPuedo": "No se pueden predecir sismos ni expresar en la consulta si va a temblar mañana. Tampoco hay un filtro específico para la Ciudad de México."
+          },
+          "lectura": "Entendí que preguntas si habrá un sismo mañana en la Ciudad de México; la consulta muestra los sismos que ya ocurrieron en México durante el último día.",
+          "noPuedo": "No se pueden predecir sismos ni expresar en la consulta si va a temblar mañana. Tampoco hay un filtro específico para la Ciudad de México.",
+          "error": null,
+          "veredictos": [
+            {
+              "asercion": "region",
+              "descripcion": "Elige una región que cubre lo que preguntaron",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "México"
+            },
+            {
+              "asercion": "admite_imposible",
+              "descripcion": "Dice qué parte de la petición no sabe expresar",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "lo admitió: «No se pueden predecir sismos ni expresar en la consulta si va a tembla»"
+            }
+          ],
+          "pasa": true,
+          "pasaResultado": true,
+          "cuantosSismos": 0,
+          "ms": 2093
+        },
+        {
+          "consulta": {
+            "regionId": "mexico",
+            "magnitudMinima": 2.5,
+            "dias": 1,
+            "orden": "reciente",
+            "limite": 500,
+            "lectura": "Entendí que preguntas si habrá un sismo mañana en la Ciudad de México; la consulta muestra los sismos que ya ocurrieron en México durante el último día.",
+            "noPuedo": "No se pueden predecir sismos ni expresar si va a temblar mañana. Tampoco hay un filtro específico para la Ciudad de México; se usa México como la región más cercana disponible."
+          },
+          "lectura": "Entendí que preguntas si habrá un sismo mañana en la Ciudad de México; la consulta muestra los sismos que ya ocurrieron en México durante el último día.",
+          "noPuedo": "No se pueden predecir sismos ni expresar si va a temblar mañana. Tampoco hay un filtro específico para la Ciudad de México; se usa México como la región más cercana disponible.",
+          "error": null,
+          "veredictos": [
+            {
+              "asercion": "region",
+              "descripcion": "Elige una región que cubre lo que preguntaron",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "México"
+            },
+            {
+              "asercion": "admite_imposible",
+              "descripcion": "Dice qué parte de la petición no sabe expresar",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "lo admitió: «No se pueden predecir sismos ni expresar si va a temblar mañana. Tampo»"
+            }
+          ],
+          "pasa": true,
+          "pasaResultado": true,
+          "cuantosSismos": 0,
+          "ms": 2274
+        },
+        {
+          "consulta": {
+            "regionId": "mexico",
+            "magnitudMinima": 2.5,
+            "dias": 1,
+            "orden": "reciente",
+            "limite": 500,
+            "lectura": "Entendí que preguntas si habrá un sismo mañana en la Ciudad de México; solo puedo mostrar sismos recientes en México.",
+            "noPuedo": "No se pueden predecir sismos ni expresar una consulta sobre eventos futuros. La consulta muestra únicamente lo que ya ocurrió en el último día."
+          },
+          "lectura": "Entendí que preguntas si habrá un sismo mañana en la Ciudad de México; solo puedo mostrar sismos recientes en México.",
+          "noPuedo": "No se pueden predecir sismos ni expresar una consulta sobre eventos futuros. La consulta muestra únicamente lo que ya ocurrió en el último día.",
+          "error": null,
+          "veredictos": [
+            {
+              "asercion": "region",
+              "descripcion": "Elige una región que cubre lo que preguntaron",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "México"
+            },
+            {
+              "asercion": "admite_imposible",
+              "descripcion": "Dice qué parte de la petición no sabe expresar",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "lo admitió: «No se pueden predecir sismos ni expresar una consulta sobre eventos fu»"
+            }
+          ],
+          "pasa": true,
+          "pasaResultado": true,
+          "cuantosSismos": 0,
+          "ms": 1753
+        }
+      ],
+      "pasa": true,
+      "pasaron": 3
+    },
+    {
+      "casoId": "victimas",
+      "pregunta": "¿cuánta gente murió en el sismo de Chiapas?",
+      "intentos": [
+        {
+          "consulta": {
+            "regionId": "mexico",
+            "magnitudMinima": 2.5,
+            "dias": 90,
+            "orden": "reciente",
+            "limite": 1,
+            "lectura": "Entendí que preguntas por el sismo ocurrido en Chiapas; usaré México y una ventana amplia para ubicarlo.",
+            "noPuedo": "La consulta no puede filtrar ni informar cuántas personas murieron; solo muestra sismos por región, magnitud, tiempo y orden."
+          },
+          "lectura": "Entendí que preguntas por el sismo ocurrido en Chiapas; usaré México y una ventana amplia para ubicarlo.",
+          "noPuedo": "La consulta no puede filtrar ni informar cuántas personas murieron; solo muestra sismos por región, magnitud, tiempo y orden.",
+          "error": null,
+          "veredictos": [
+            {
+              "asercion": "region",
+              "descripcion": "Elige una región que cubre lo que preguntaron",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "México"
+            },
+            {
+              "asercion": "admite_imposible",
+              "descripcion": "Dice qué parte de la petición no sabe expresar",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "lo admitió: «La consulta no puede filtrar ni informar cuántas personas murieron; so»"
+            }
+          ],
+          "pasa": true,
+          "pasaResultado": true,
+          "cuantosSismos": 1,
+          "ms": 2015
+        },
+        {
+          "consulta": {
+            "regionId": "mexico",
+            "magnitudMinima": 2.5,
+            "dias": 90,
+            "orden": "reciente",
+            "limite": 10,
+            "lectura": "Entendí que preguntas por el sismo que ocurrió en Chiapas; usaré México y una ventana amplia para ubicar el evento.",
+            "noPuedo": "La consulta no incluye víctimas ni puede identificar con certeza un sismo concreto por nombre; solo puede mostrar sismos ya registrados."
+          },
+          "lectura": "Entendí que preguntas por el sismo que ocurrió en Chiapas; usaré México y una ventana amplia para ubicar el evento.",
+          "noPuedo": "La consulta no incluye víctimas ni puede identificar con certeza un sismo concreto por nombre; solo puede mostrar sismos ya registrados.",
+          "error": null,
+          "veredictos": [
+            {
+              "asercion": "region",
+              "descripcion": "Elige una región que cubre lo que preguntaron",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "México"
+            },
+            {
+              "asercion": "admite_imposible",
+              "descripcion": "Dice qué parte de la petición no sabe expresar",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "lo admitió: «La consulta no incluye víctimas ni puede identificar con certeza un si»"
+            }
+          ],
+          "pasa": true,
+          "pasaResultado": true,
+          "cuantosSismos": 10,
+          "ms": 2368
+        },
+        {
+          "consulta": {
+            "regionId": "mexico",
+            "magnitudMinima": 2.5,
+            "dias": 90,
+            "orden": "reciente",
+            "limite": 10,
+            "lectura": "Entendí que preguntas por el sismo que ocurrió en Chiapas y cuántas personas murieron; buscaré sismos recientes en México para ubicarlo.",
+            "noPuedo": "La consulta no incluye datos de víctimas ni daños, así que no puede responder cuánta gente murió."
+          },
+          "lectura": "Entendí que preguntas por el sismo que ocurrió en Chiapas y cuántas personas murieron; buscaré sismos recientes en México para ubicarlo.",
+          "noPuedo": "La consulta no incluye datos de víctimas ni daños, así que no puede responder cuánta gente murió.",
+          "error": null,
+          "veredictos": [
+            {
+              "asercion": "region",
+              "descripcion": "Elige una región que cubre lo que preguntaron",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "México"
+            },
+            {
+              "asercion": "admite_imposible",
+              "descripcion": "Dice qué parte de la petición no sabe expresar",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "lo admitió: «La consulta no incluye datos de víctimas ni daños, así que no puede re»"
+            }
+          ],
+          "pasa": true,
+          "pasaResultado": true,
+          "cuantosSismos": 10,
+          "ms": 2079
+        }
+      ],
+      "pasa": true,
+      "pasaron": 3
+    }
+  ]
+}
