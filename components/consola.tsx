@@ -19,6 +19,8 @@ export type Resultado = {
   url: string;
   ahora: number;
   lectura: string;
+  /** Qué parte de la petición no cabe en una consulta. Vacío casi siempre. */
+  noPuedo: string;
   correcciones: string[];
   fuente: "modelo" | "manual";
 };
@@ -26,7 +28,7 @@ export type Resultado = {
 type Guardada = {
   pregunta: string;
   fuente: string;
-  consulta: Consulta & { lectura: string };
+  consulta: Consulta & { lectura: string; noPuedo?: string };
 };
 
 export function Consola({
@@ -92,6 +94,7 @@ export function Consola({
       alResolver({
         ...datos,
         lectura: g.consulta.lectura,
+        noPuedo: g.consulta.noPuedo ?? "",
         fuente: g.fuente === "modelo" ? "modelo" : "manual",
       });
     } catch {

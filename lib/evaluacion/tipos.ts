@@ -42,6 +42,10 @@ export type Espera = {
   lugarContiene?: string;
   /** Tiene que devolver cero. Para lo que es imposible de verdad. */
   esperaVacio?: boolean;
+  /** La petición pide algo que la consulta no sabe expresar: `noPuedo` no puede
+      venir vacío. Es de familia interpretación, no de resultado — depende solo
+      de si el modelo reconoció el límite, no de lo que haya temblado. */
+  debeAdmitirImposible?: boolean;
 };
 
 export type Caso = {
@@ -65,6 +69,7 @@ export type Veredicto = {
 export type Contexto = {
   caso: Caso;
   consulta: Consulta;
+  noPuedo: string;
   sismos: Sismo[];
 };
 
@@ -80,6 +85,7 @@ export type Intento = {
   /** Null si la llamada al modelo falló; se distingue de «falló una aserción». */
   consulta: Consulta | null;
   lectura: string;
+  noPuedo: string;
   error: string | null;
   veredictos: Veredicto[];
   /** Solo cuenta la familia de interpretación: lo que depende de los datos del
@@ -119,5 +125,5 @@ export type Sujeto = {
   huellaPrompt: string;
   responder: (
     pregunta: string,
-  ) => Promise<{ consulta: Consulta; lectura: string }>;
+  ) => Promise<{ consulta: Consulta; lectura: string; noPuedo: string }>;
 };

@@ -63,6 +63,7 @@ export async function POST(peticion: Request) {
       consulta,
       correcciones,
       lectura: cruda.lectura,
+      noPuedo: cruda.noPuedo,
       region: region.nombre,
       sismos,
       url,

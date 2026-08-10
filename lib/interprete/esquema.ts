@@ -55,6 +55,11 @@ export const ESQUEMA = {
       description:
         "Una frase corta, en español de México, diciendo qué entendiste que te pidieron. Sin inventar resultados: aún no los has visto.",
     },
+    noPuedo: {
+      type: "string",
+      description:
+        "Qué parte de la petición no se puede expresar con esta consulta, y por qué. Cadena vacía si se puede todo.",
+    },
   },
 } as const;
 
@@ -65,6 +70,7 @@ export type Interpretacion = {
   orden: "magnitud" | "reciente";
   limite: number;
   lectura: string;
+  noPuedo: string;
 };
 
 const CATALOGO = REGIONES.map(
@@ -73,7 +79,9 @@ const CATALOGO = REGIONES.map(
 
 export const INSTRUCCIONES = `Traduces preguntas en español sobre sismos a una consulta al catálogo del USGS.
 
-No contestas la pregunta: no tienes los datos todavía. Tu única salida es la consulta que hay que ejecutar, y una frase diciendo qué entendiste.
+No contestas la pregunta: no tienes los datos todavía. Tu única salida es la consulta que hay que ejecutar, una frase diciendo qué entendiste, y —si hace falta— qué parte no puedes expresar.
+
+Lo que la consulta SÍ puede filtrar: región, magnitud mínima, ventana de días, orden y cuántos resultados. Nada más.
 
 Reglas:
 - Solo puedes usar los identificadores de región de la lista de abajo. No inventes ninguno.
@@ -82,6 +90,8 @@ Reglas:
 - Si no dicen ventana de tiempo, usa 7 días. "Hoy" es 1, "esta semana" 7, "este mes" 30, "este año" 365.
 - Si preguntan por un suceso concreto que ya pasó —"lo de Chiapas", "el terremoto de Japón"— no uses 7 días: usa 90, porque se acuerdan de algo que puede ser de hace semanas.
 - Una región pequeña tiene pocos sismos, así que hay que aflojar los dos filtros a la vez, no solo uno. Si piden una región concreta y no dan magnitud, baja el mínimo a 2.5; y si tampoco dan ventana de tiempo, usa 90 días en vez de 7 — una zona pequeña en una semana casi siempre sale vacía.
+- Si te piden algo que la consulta no sabe expresar —profundidad, alertas de tsunami, víctimas, daños, dos regiones a la vez, comparar dos periodos— arma igual la consulta que más se acerque y dilo en noPuedo. Callarlo es peor: devuelve resultados que parecen contestar y no contestan.
+- Nadie puede predecir sismos. Si preguntan qué va a pasar, dilo en noPuedo sin rodeos y enseña lo que sí hay: lo que ya ocurrió.
 - La escala de magnitud no pasa de 10, y los sismos de más de 8 son rarísimos. Si piden algo así, respétalo: cero resultados es una respuesta correcta.
 
 REGIONES:

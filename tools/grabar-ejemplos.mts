@@ -24,6 +24,11 @@ const PREGUNTAS = [
   "los cinco más grandes del año en todo el mundo",
   "¿algo en Islandia?",
   "terremotos de más de 9 grados esta semana",
+  // Los dos últimos piden algo que la consulta no sabe expresar. Van en la
+  // demo a propósito: enseñar dónde se acaba la herramienta dice más de ella
+  // que seis ejemplos en los que todo sale bien.
+  "¿va a temblar mañana en la Ciudad de México?",
+  "¿ha habido sismos profundos, de más de 300 km?",
 ];
 
 const espera = (ms: number) => new Promise((r) => setTimeout(r, ms));
@@ -60,9 +65,16 @@ for (const [i, pregunta] of PREGUNTAS.entries()) {
     ejemplos.push({
       pregunta,
       fuente: "modelo",
-      consulta: { ...datos.consulta, lectura: datos.lectura },
+      consulta: {
+        ...datos.consulta,
+        lectura: datos.lectura,
+        noPuedo: datos.noPuedo ?? "",
+      },
     });
-    console.log(`→ ${datos.consulta.regionId} · ${datos.sismos.length} eventos`);
+    console.log(
+      `→ ${datos.consulta.regionId} · ${datos.sismos.length} eventos` +
+        (datos.noPuedo ? `  · avisa: «${datos.noPuedo.slice(0, 50)}…»` : ""),
+    );
     break;
   }
 }
@@ -76,4 +88,6 @@ await writeFile(
   "content/consultas-guardadas.json",
   `${JSON.stringify(salida, null, 2)}\n`,
 );
-console.log(`\n  ${ejemplos.length} ejemplos en content/consultas-guardadas.json\n`);
+console.log(
+  `\n  ${ejemplos.length} ejemplos en content/consultas-guardadas.json\n`,
+);

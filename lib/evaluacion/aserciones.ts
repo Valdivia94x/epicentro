@@ -104,6 +104,24 @@ export const ASERCIONES: Asercion[] = [
   },
 
   {
+    id: "admite_imposible",
+    descripcion: "Dice qué parte de la petición no sabe expresar",
+    familia: "interpretacion",
+    evaluar: ({ caso, noPuedo }) => {
+      if (!caso.espera.debeAdmitirImposible) return null;
+      const dijo = noPuedo.trim().length > 0;
+      // Familia interpretación y no resultado: reconocer el límite depende solo
+      // del modelo. Que además devuelva algo útil es otra pregunta.
+      return {
+        pasa: dijo,
+        detalle: dijo
+          ? `lo admitió: «${noPuedo.slice(0, 70)}»`
+          : "calló que no podía expresarlo",
+      };
+    },
+  },
+
+  {
     id: "devuelve_algo",
     descripcion: "La consulta encuentra al menos un sismo",
     familia: "resultado",

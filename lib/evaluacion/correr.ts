@@ -26,7 +26,9 @@ import type {
 async function evaluarUnaVez(caso: Caso, sujeto: Sujeto): Promise<Intento> {
   const arranque = Date.now();
   try {
-    const { consulta, lectura } = await sujeto.responder(caso.pregunta);
+    const { consulta, lectura, noPuedo } = await sujeto.responder(
+      caso.pregunta,
+    );
 
     // Se ejecuta la saneada —es lo que haría la app— pero se juzga la cruda.
     const { consulta: segura } = sanear(consulta as Partial<Consulta>);
@@ -34,7 +36,7 @@ async function evaluarUnaVez(caso: Caso, sujeto: Sujeto): Promise<Intento> {
 
     const veredictos: Veredicto[] = [];
     for (const asercion of ASERCIONES) {
-      const salida = asercion.evaluar({ caso, consulta, sismos });
+      const salida = asercion.evaluar({ caso, consulta, noPuedo, sismos });
       // null significa «no aplica»: no cuenta ni a favor ni en contra.
       if (!salida) continue;
       veredictos.push({
@@ -54,6 +56,7 @@ async function evaluarUnaVez(caso: Caso, sujeto: Sujeto): Promise<Intento> {
     return {
       consulta,
       lectura,
+      noPuedo,
       error: null,
       veredictos,
       pasa: interpretacion.every((v) => v.pasa),
@@ -67,6 +70,7 @@ async function evaluarUnaVez(caso: Caso, sujeto: Sujeto): Promise<Intento> {
     return {
       consulta: null,
       lectura: "",
+      noPuedo: "",
       error: falla instanceof Error ? falla.message : String(falla),
       veredictos: [],
       pasa: false,

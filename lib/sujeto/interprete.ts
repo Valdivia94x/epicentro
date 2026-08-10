@@ -38,7 +38,11 @@ export function interpreteReal(modelo = MODELO_POR_DEFECTO): Sujeto {
       const cruda = await interpretar(pregunta, modelo);
       // Cruda a propósito: si `sanear` tuvo que recortar algo, eso es un error
       // del modelo y el harness tiene que verlo, no recibirlo ya arreglado.
-      return { consulta: cruda, lectura: cruda.lectura };
+      return {
+        consulta: cruda,
+        lectura: cruda.lectura,
+        noPuedo: cruda.noPuedo,
+      };
     },
   };
 }
@@ -64,6 +68,7 @@ export function interpreteDePrueba(): Sujeto {
         limite: 500,
       },
       lectura: "Respuesta fija del sujeto de prueba.",
+      noPuedo: "",
     }),
   };
 }

@@ -1,0 +1,832 @@
+{
+  "id": "2026-08-10T01-22-28-487Z-stub",
+  "fecha": "2026-08-10T01:22:28.487Z",
+  "modelo": "determinista",
+  "huellaPrompt": "stub",
+  "huellaRegiones": "50a1a132a120",
+  "repeticiones": 1,
+  "resultados": [
+    {
+      "casoId": "mundo_reciente",
+      "pregunta": "¿qué ha temblado hoy?",
+      "intentos": [
+        {
+          "consulta": {
+            "regionId": "mundo",
+            "magnitudMinima": 4.5,
+            "dias": 7,
+            "orden": "reciente",
+            "limite": 500
+          },
+          "lectura": "Respuesta fija del sujeto de prueba.",
+          "noPuedo": "",
+          "error": null,
+          "veredictos": [
+            {
+              "asercion": "region",
+              "descripcion": "Elige una región que cubre lo que preguntaron",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "Todo el mundo"
+            },
+            {
+              "asercion": "orden",
+              "descripcion": "Ordena por lo que la pregunta pide",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "ordena por reciente (se esperaba reciente)"
+            },
+            {
+              "asercion": "devuelve_algo",
+              "descripcion": "La consulta encuentra al menos un sismo",
+              "familia": "resultado",
+              "pasa": true,
+              "detalle": "97 eventos"
+            }
+          ],
+          "pasa": true,
+          "pasaResultado": true,
+          "cuantosSismos": 97,
+          "ms": 483
+        }
+      ],
+      "pasa": true,
+      "pasaron": 1
+    },
+    {
+      "casoId": "japon_ano",
+      "pregunta": "terremotos en Japón el último año",
+      "intentos": [
+        {
+          "consulta": {
+            "regionId": "mundo",
+            "magnitudMinima": 4.5,
+            "dias": 7,
+            "orden": "reciente",
+            "limite": 500
+          },
+          "lectura": "Respuesta fija del sujeto de prueba.",
+          "noPuedo": "",
+          "error": null,
+          "veredictos": [
+            {
+              "asercion": "region",
+              "descripcion": "Elige una región que cubre lo que preguntaron",
+              "familia": "interpretacion",
+              "pasa": false,
+              "detalle": "eligió Todo el mundo; se esperaba japon"
+            },
+            {
+              "asercion": "ventana",
+              "descripcion": "La ventana de tiempo alcanza para encontrar algo",
+              "familia": "interpretacion",
+              "pasa": false,
+              "detalle": "7 días (mínimo 300)"
+            },
+            {
+              "asercion": "devuelve_algo",
+              "descripcion": "La consulta encuentra al menos un sismo",
+              "familia": "resultado",
+              "pasa": true,
+              "detalle": "97 eventos"
+            },
+            {
+              "asercion": "lugar_cubierto",
+              "descripcion": "Entre los resultados sale el sitio por el que preguntaron",
+              "familia": "resultado",
+              "pasa": true,
+              "detalle": "8 en «Japan»"
+            }
+          ],
+          "pasa": false,
+          "pasaResultado": true,
+          "cuantosSismos": 97,
+          "ms": 52
+        }
+      ],
+      "pasa": false,
+      "pasaron": 0
+    },
+    {
+      "casoId": "cinco_mas_grandes",
+      "pregunta": "los cinco más grandes del año en todo el mundo",
+      "intentos": [
+        {
+          "consulta": {
+            "regionId": "mundo",
+            "magnitudMinima": 4.5,
+            "dias": 7,
+            "orden": "reciente",
+            "limite": 500
+          },
+          "lectura": "Respuesta fija del sujeto de prueba.",
+          "noPuedo": "",
+          "error": null,
+          "veredictos": [
+            {
+              "asercion": "region",
+              "descripcion": "Elige una región que cubre lo que preguntaron",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "Todo el mundo"
+            },
+            {
+              "asercion": "ventana",
+              "descripcion": "La ventana de tiempo alcanza para encontrar algo",
+              "familia": "interpretacion",
+              "pasa": false,
+              "detalle": "7 días (mínimo 300)"
+            },
+            {
+              "asercion": "orden",
+              "descripcion": "Ordena por lo que la pregunta pide",
+              "familia": "interpretacion",
+              "pasa": false,
+              "detalle": "ordena por reciente (se esperaba magnitud)"
+            },
+            {
+              "asercion": "limite",
+              "descripcion": "No devuelve una avalancha cuando le piden uno",
+              "familia": "interpretacion",
+              "pasa": false,
+              "detalle": "límite 500 (tope 5)"
+            },
+            {
+              "asercion": "devuelve_algo",
+              "descripcion": "La consulta encuentra al menos un sismo",
+              "familia": "resultado",
+              "pasa": true,
+              "detalle": "97 eventos"
+            }
+          ],
+          "pasa": false,
+          "pasaResultado": true,
+          "cuantosSismos": 97,
+          "ms": 48
+        }
+      ],
+      "pasa": false,
+      "pasaron": 0
+    },
+    {
+      "casoId": "cdmx",
+      "pregunta": "¿ha temblado cerca de la Ciudad de México?",
+      "intentos": [
+        {
+          "consulta": {
+            "regionId": "mundo",
+            "magnitudMinima": 4.5,
+            "dias": 7,
+            "orden": "reciente",
+            "limite": 500
+          },
+          "lectura": "Respuesta fija del sujeto de prueba.",
+          "noPuedo": "",
+          "error": null,
+          "veredictos": [
+            {
+              "asercion": "region",
+              "descripcion": "Elige una región que cubre lo que preguntaron",
+              "familia": "interpretacion",
+              "pasa": false,
+              "detalle": "eligió Todo el mundo; se esperaba mexico o brecha_guerrero"
+            },
+            {
+              "asercion": "ventana",
+              "descripcion": "La ventana de tiempo alcanza para encontrar algo",
+              "familia": "interpretacion",
+              "pasa": false,
+              "detalle": "7 días (mínimo 30)"
+            },
+            {
+              "asercion": "magnitud",
+              "descripcion": "No filtra tan alto que se quede sin datos",
+              "familia": "interpretacion",
+              "pasa": false,
+              "detalle": "pide M4.5+ (tope M3)"
+            },
+            {
+              "asercion": "devuelve_algo",
+              "descripcion": "La consulta encuentra al menos un sismo",
+              "familia": "resultado",
+              "pasa": true,
+              "detalle": "97 eventos"
+            },
+            {
+              "asercion": "lugar_cubierto",
+              "descripcion": "Entre los resultados sale el sitio por el que preguntaron",
+              "familia": "resultado",
+              "pasa": true,
+              "detalle": "2 en «Mexico»"
+            }
+          ],
+          "pasa": false,
+          "pasaResultado": true,
+          "cuantosSismos": 97,
+          "ms": 70
+        }
+      ],
+      "pasa": false,
+      "pasaron": 0
+    },
+    {
+      "casoId": "islandia",
+      "pregunta": "¿algo en Islandia?",
+      "intentos": [
+        {
+          "consulta": {
+            "regionId": "mundo",
+            "magnitudMinima": 4.5,
+            "dias": 7,
+            "orden": "reciente",
+            "limite": 500
+          },
+          "lectura": "Respuesta fija del sujeto de prueba.",
+          "noPuedo": "",
+          "error": null,
+          "veredictos": [
+            {
+              "asercion": "region",
+              "descripcion": "Elige una región que cubre lo que preguntaron",
+              "familia": "interpretacion",
+              "pasa": false,
+              "detalle": "eligió Todo el mundo; se esperaba islandia"
+            },
+            {
+              "asercion": "ventana",
+              "descripcion": "La ventana de tiempo alcanza para encontrar algo",
+              "familia": "interpretacion",
+              "pasa": false,
+              "detalle": "7 días (mínimo 30)"
+            },
+            {
+              "asercion": "magnitud",
+              "descripcion": "No filtra tan alto que se quede sin datos",
+              "familia": "interpretacion",
+              "pasa": false,
+              "detalle": "pide M4.5+ (tope M3)"
+            },
+            {
+              "asercion": "devuelve_algo",
+              "descripcion": "La consulta encuentra al menos un sismo",
+              "familia": "resultado",
+              "pasa": true,
+              "detalle": "97 eventos"
+            },
+            {
+              "asercion": "lugar_cubierto",
+              "descripcion": "Entre los resultados sale el sitio por el que preguntaron",
+              "familia": "resultado",
+              "pasa": false,
+              "detalle": "ninguno de los 97 menciona «Iceland»"
+            }
+          ],
+          "pasa": false,
+          "pasaResultado": false,
+          "cuantosSismos": 97,
+          "ms": 52
+        }
+      ],
+      "pasa": false,
+      "pasaron": 0
+    },
+    {
+      "casoId": "chiapas_pasado",
+      "pregunta": "¿qué tan fuerte fue lo de Chiapas?",
+      "intentos": [
+        {
+          "consulta": {
+            "regionId": "mundo",
+            "magnitudMinima": 4.5,
+            "dias": 7,
+            "orden": "reciente",
+            "limite": 500
+          },
+          "lectura": "Respuesta fija del sujeto de prueba.",
+          "noPuedo": "",
+          "error": null,
+          "veredictos": [
+            {
+              "asercion": "region",
+              "descripcion": "Elige una región que cubre lo que preguntaron",
+              "familia": "interpretacion",
+              "pasa": false,
+              "detalle": "eligió Todo el mundo; se esperaba mexico"
+            },
+            {
+              "asercion": "ventana",
+              "descripcion": "La ventana de tiempo alcanza para encontrar algo",
+              "familia": "interpretacion",
+              "pasa": false,
+              "detalle": "7 días (mínimo 30)"
+            },
+            {
+              "asercion": "orden",
+              "descripcion": "Ordena por lo que la pregunta pide",
+              "familia": "interpretacion",
+              "pasa": false,
+              "detalle": "ordena por reciente (se esperaba magnitud)"
+            },
+            {
+              "asercion": "devuelve_algo",
+              "descripcion": "La consulta encuentra al menos un sismo",
+              "familia": "resultado",
+              "pasa": true,
+              "detalle": "97 eventos"
+            },
+            {
+              "asercion": "lugar_cubierto",
+              "descripcion": "Entre los resultados sale el sitio por el que preguntaron",
+              "familia": "resultado",
+              "pasa": true,
+              "detalle": "2 en «Mexico»"
+            }
+          ],
+          "pasa": false,
+          "pasaResultado": true,
+          "cuantosSismos": 97,
+          "ms": 58
+        }
+      ],
+      "pasa": false,
+      "pasaron": 0
+    },
+    {
+      "casoId": "taiwan",
+      "pregunta": "¿ha temblado en Taiwán?",
+      "intentos": [
+        {
+          "consulta": {
+            "regionId": "mundo",
+            "magnitudMinima": 4.5,
+            "dias": 7,
+            "orden": "reciente",
+            "limite": 500
+          },
+          "lectura": "Respuesta fija del sujeto de prueba.",
+          "noPuedo": "",
+          "error": null,
+          "veredictos": [
+            {
+              "asercion": "region",
+              "descripcion": "Elige una región que cubre lo que preguntaron",
+              "familia": "interpretacion",
+              "pasa": false,
+              "detalle": "eligió Todo el mundo; se esperaba taiwan"
+            },
+            {
+              "asercion": "ventana",
+              "descripcion": "La ventana de tiempo alcanza para encontrar algo",
+              "familia": "interpretacion",
+              "pasa": false,
+              "detalle": "7 días (mínimo 30)"
+            },
+            {
+              "asercion": "magnitud",
+              "descripcion": "No filtra tan alto que se quede sin datos",
+              "familia": "interpretacion",
+              "pasa": false,
+              "detalle": "pide M4.5+ (tope M3)"
+            },
+            {
+              "asercion": "devuelve_algo",
+              "descripcion": "La consulta encuentra al menos un sismo",
+              "familia": "resultado",
+              "pasa": true,
+              "detalle": "97 eventos"
+            }
+          ],
+          "pasa": false,
+          "pasaResultado": true,
+          "cuantosSismos": 97,
+          "ms": 72
+        }
+      ],
+      "pasa": false,
+      "pasaron": 0
+    },
+    {
+      "casoId": "turquia",
+      "pregunta": "¿tembló en Turquía?",
+      "intentos": [
+        {
+          "consulta": {
+            "regionId": "mundo",
+            "magnitudMinima": 4.5,
+            "dias": 7,
+            "orden": "reciente",
+            "limite": 500
+          },
+          "lectura": "Respuesta fija del sujeto de prueba.",
+          "noPuedo": "",
+          "error": null,
+          "veredictos": [
+            {
+              "asercion": "region",
+              "descripcion": "Elige una región que cubre lo que preguntaron",
+              "familia": "interpretacion",
+              "pasa": false,
+              "detalle": "eligió Todo el mundo; se esperaba mediterraneo o iran_caucaso"
+            },
+            {
+              "asercion": "ventana",
+              "descripcion": "La ventana de tiempo alcanza para encontrar algo",
+              "familia": "interpretacion",
+              "pasa": false,
+              "detalle": "7 días (mínimo 30)"
+            },
+            {
+              "asercion": "magnitud",
+              "descripcion": "No filtra tan alto que se quede sin datos",
+              "familia": "interpretacion",
+              "pasa": false,
+              "detalle": "pide M4.5+ (tope M3)"
+            },
+            {
+              "asercion": "devuelve_algo",
+              "descripcion": "La consulta encuentra al menos un sismo",
+              "familia": "resultado",
+              "pasa": true,
+              "detalle": "97 eventos"
+            }
+          ],
+          "pasa": false,
+          "pasaResultado": true,
+          "cuantosSismos": 97,
+          "ms": 53
+        }
+      ],
+      "pasa": false,
+      "pasaron": 0
+    },
+    {
+      "casoId": "chile_fuertes",
+      "pregunta": "los sismos más fuertes de Chile",
+      "intentos": [
+        {
+          "consulta": {
+            "regionId": "mundo",
+            "magnitudMinima": 4.5,
+            "dias": 7,
+            "orden": "reciente",
+            "limite": 500
+          },
+          "lectura": "Respuesta fija del sujeto de prueba.",
+          "noPuedo": "",
+          "error": null,
+          "veredictos": [
+            {
+              "asercion": "region",
+              "descripcion": "Elige una región que cubre lo que preguntaron",
+              "familia": "interpretacion",
+              "pasa": false,
+              "detalle": "eligió Todo el mundo; se esperaba chile_peru"
+            },
+            {
+              "asercion": "ventana",
+              "descripcion": "La ventana de tiempo alcanza para encontrar algo",
+              "familia": "interpretacion",
+              "pasa": false,
+              "detalle": "7 días (mínimo 30)"
+            },
+            {
+              "asercion": "orden",
+              "descripcion": "Ordena por lo que la pregunta pide",
+              "familia": "interpretacion",
+              "pasa": false,
+              "detalle": "ordena por reciente (se esperaba magnitud)"
+            },
+            {
+              "asercion": "devuelve_algo",
+              "descripcion": "La consulta encuentra al menos un sismo",
+              "familia": "resultado",
+              "pasa": true,
+              "detalle": "97 eventos"
+            },
+            {
+              "asercion": "lugar_cubierto",
+              "descripcion": "Entre los resultados sale el sitio por el que preguntaron",
+              "familia": "resultado",
+              "pasa": false,
+              "detalle": "ninguno de los 97 menciona «Chile»"
+            }
+          ],
+          "pasa": false,
+          "pasaResultado": false,
+          "cuantosSismos": 97,
+          "ms": 57
+        }
+      ],
+      "pasa": false,
+      "pasaron": 0
+    },
+    {
+      "casoId": "pacifico_m5",
+      "pregunta": "sismos de más de 5 en el pacífico este mes",
+      "intentos": [
+        {
+          "consulta": {
+            "regionId": "mundo",
+            "magnitudMinima": 4.5,
+            "dias": 7,
+            "orden": "reciente",
+            "limite": 500
+          },
+          "lectura": "Respuesta fija del sujeto de prueba.",
+          "noPuedo": "",
+          "error": null,
+          "veredictos": [
+            {
+              "asercion": "region",
+              "descripcion": "Elige una región que cubre lo que preguntaron",
+              "familia": "interpretacion",
+              "pasa": false,
+              "detalle": "eligió Todo el mundo; se esperaba anillo_de_fuego"
+            },
+            {
+              "asercion": "ventana",
+              "descripcion": "La ventana de tiempo alcanza para encontrar algo",
+              "familia": "interpretacion",
+              "pasa": false,
+              "detalle": "7 días (mínimo 28)"
+            },
+            {
+              "asercion": "magnitud",
+              "descripcion": "No filtra tan alto que se quede sin datos",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "pide M4.5+ (tope M5)"
+            },
+            {
+              "asercion": "magnitud_pedida",
+              "descripcion": "Respeta la magnitud que le pidieron explícitamente",
+              "familia": "interpretacion",
+              "pasa": false,
+              "detalle": "pide M4.5+ (se pidió M5+)"
+            },
+            {
+              "asercion": "devuelve_algo",
+              "descripcion": "La consulta encuentra al menos un sismo",
+              "familia": "resultado",
+              "pasa": true,
+              "detalle": "97 eventos"
+            }
+          ],
+          "pasa": false,
+          "pasaResultado": true,
+          "cuantosSismos": 97,
+          "ms": 51
+        }
+      ],
+      "pasa": false,
+      "pasaron": 0
+    },
+    {
+      "casoId": "imposible_m9",
+      "pregunta": "terremotos de más de 9 grados esta semana",
+      "intentos": [
+        {
+          "consulta": {
+            "regionId": "mundo",
+            "magnitudMinima": 4.5,
+            "dias": 7,
+            "orden": "reciente",
+            "limite": 500
+          },
+          "lectura": "Respuesta fija del sujeto de prueba.",
+          "noPuedo": "",
+          "error": null,
+          "veredictos": [
+            {
+              "asercion": "region",
+              "descripcion": "Elige una región que cubre lo que preguntaron",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "Todo el mundo"
+            },
+            {
+              "asercion": "magnitud_pedida",
+              "descripcion": "Respeta la magnitud que le pidieron explícitamente",
+              "familia": "interpretacion",
+              "pasa": false,
+              "detalle": "pide M4.5+ (se pidió M9+)"
+            },
+            {
+              "asercion": "vacio_cuando_toca",
+              "descripcion": "Devuelve cero cuando cero es la respuesta correcta",
+              "familia": "resultado",
+              "pasa": false,
+              "detalle": "97 eventos (se esperaban 0)"
+            }
+          ],
+          "pasa": false,
+          "pasaResultado": false,
+          "cuantosSismos": 97,
+          "ms": 77
+        }
+      ],
+      "pasa": false,
+      "pasaron": 0
+    },
+    {
+      "casoId": "fuera_del_planeta",
+      "pregunta": "¿ha temblado en Marte?",
+      "intentos": [
+        {
+          "consulta": {
+            "regionId": "mundo",
+            "magnitudMinima": 4.5,
+            "dias": 7,
+            "orden": "reciente",
+            "limite": 500
+          },
+          "lectura": "Respuesta fija del sujeto de prueba.",
+          "noPuedo": "",
+          "error": null,
+          "veredictos": [
+            {
+              "asercion": "region",
+              "descripcion": "Elige una región que cubre lo que preguntaron",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "Todo el mundo"
+            }
+          ],
+          "pasa": true,
+          "pasaResultado": true,
+          "cuantosSismos": 97,
+          "ms": 54
+        }
+      ],
+      "pasa": true,
+      "pasaron": 1
+    },
+    {
+      "casoId": "profundidad",
+      "pregunta": "¿ha habido sismos profundos, de más de 300 km?",
+      "intentos": [
+        {
+          "consulta": {
+            "regionId": "mundo",
+            "magnitudMinima": 4.5,
+            "dias": 7,
+            "orden": "reciente",
+            "limite": 500
+          },
+          "lectura": "Respuesta fija del sujeto de prueba.",
+          "noPuedo": "",
+          "error": null,
+          "veredictos": [
+            {
+              "asercion": "region",
+              "descripcion": "Elige una región que cubre lo que preguntaron",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "Todo el mundo"
+            },
+            {
+              "asercion": "admite_imposible",
+              "descripcion": "Dice qué parte de la petición no sabe expresar",
+              "familia": "interpretacion",
+              "pasa": false,
+              "detalle": "calló que no podía expresarlo"
+            },
+            {
+              "asercion": "devuelve_algo",
+              "descripcion": "La consulta encuentra al menos un sismo",
+              "familia": "resultado",
+              "pasa": true,
+              "detalle": "97 eventos"
+            }
+          ],
+          "pasa": false,
+          "pasaResultado": true,
+          "cuantosSismos": 97,
+          "ms": 54
+        }
+      ],
+      "pasa": false,
+      "pasaron": 0
+    },
+    {
+      "casoId": "dos_regiones",
+      "pregunta": "¿tembló en Chile o en Japón?",
+      "intentos": [
+        {
+          "consulta": {
+            "regionId": "mundo",
+            "magnitudMinima": 4.5,
+            "dias": 7,
+            "orden": "reciente",
+            "limite": 500
+          },
+          "lectura": "Respuesta fija del sujeto de prueba.",
+          "noPuedo": "",
+          "error": null,
+          "veredictos": [
+            {
+              "asercion": "region",
+              "descripcion": "Elige una región que cubre lo que preguntaron",
+              "familia": "interpretacion",
+              "pasa": true,
+              "detalle": "Todo el mundo"
+            },
+            {
+              "asercion": "admite_imposible",
+              "descripcion": "Dice qué parte de la petición no sabe expresar",
+              "familia": "interpretacion",
+              "pasa": false,
+              "detalle": "calló que no podía expresarlo"
+            }
+          ],
+          "pasa": false,
+          "pasaResultado": true,
+          "cuantosSismos": 97,
+          "ms": 48
+        }
+      ],
+      "pasa": false,
+      "pasaron": 0
+    },
+    {
+      "casoId": "prediccion",
+      "pregunta": "¿va a temblar mañana en la Ciudad de México?",
+      "intentos": [
+        {
+          "consulta": {
+            "regionId": "mundo",
+            "magnitudMinima": 4.5,
+            "dias": 7,
+            "orden": "reciente",
+            "limite": 500
+          },
+          "lectura": "Respuesta fija del sujeto de prueba.",
+          "noPuedo": "",
+          "error": null,
+          "veredictos": [
+            {
+              "asercion": "region",
+              "descripcion": "Elige una región que cubre lo que preguntaron",
+              "familia": "interpretacion",
+              "pasa": false,
+              "detalle": "eligió Todo el mundo; se esperaba mexico o brecha_guerrero"
+            },
+            {
+              "asercion": "admite_imposible",
+              "descripcion": "Dice qué parte de la petición no sabe expresar",
+              "familia": "interpretacion",
+              "pasa": false,
+              "detalle": "calló que no podía expresarlo"
+            }
+          ],
+          "pasa": false,
+          "pasaResultado": true,
+          "cuantosSismos": 97,
+          "ms": 128
+        }
+      ],
+      "pasa": false,
+      "pasaron": 0
+    },
+    {
+      "casoId": "victimas",
+      "pregunta": "¿cuánta gente murió en el sismo de Chiapas?",
+      "intentos": [
+        {
+          "consulta": {
+            "regionId": "mundo",
+            "magnitudMinima": 4.5,
+            "dias": 7,
+            "orden": "reciente",
+            "limite": 500
+          },
+          "lectura": "Respuesta fija del sujeto de prueba.",
+          "noPuedo": "",
+          "error": null,
+          "veredictos": [
+            {
+              "asercion": "region",
+              "descripcion": "Elige una región que cubre lo que preguntaron",
+              "familia": "interpretacion",
+              "pasa": false,
+              "detalle": "eligió Todo el mundo; se esperaba mexico"
+            },
+            {
+              "asercion": "admite_imposible",
+              "descripcion": "Dice qué parte de la petición no sabe expresar",
+              "familia": "interpretacion",
+              "pasa": false,
+              "detalle": "calló que no podía expresarlo"
+            }
+          ],
+          "pasa": false,
+          "pasaResultado": true,
+          "cuantosSismos": 97,
+          "ms": 47
+        }
+      ],
+      "pasa": false,
+      "pasaron": 0
+    }
+  ]
+}

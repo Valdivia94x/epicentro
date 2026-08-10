@@ -61,7 +61,12 @@ export function Estacion({
       });
       const datos = await r.json();
       if (r.ok) {
-        setResultado({ ...datos, lectura: texto, fuente: "manual" });
+        setResultado({
+          ...datos,
+          lectura: texto,
+          noPuedo: "",
+          fuente: "manual",
+        });
         setSeleccionado(null);
       }
     } finally {
@@ -84,6 +89,14 @@ export function Estacion({
       {resultado && (
         <div className="border-l-4 border-m2 bg-pantalla-alta p-3 text-[11px]">
           <p className="text-fosforo-alto">{resultado.lectura}</p>
+          {/* Lo que no cabe en una consulta va ARRIBA de los resultados, no en
+              una nota al pie: unos datos que parecen contestar y no contestan
+              son peores que no tener ninguno, y para entonces ya los leíste. */}
+          {resultado.noPuedo && (
+            <p className="mt-2 border-l-4 border-m3 pl-2 text-m3">
+              {resultado.noPuedo}
+            </p>
+          )}
           <p className="mt-2 text-[10px] text-fosforo-tenue">
             {resultado.fuente === "modelo"
               ? "Interpretado por el modelo ahora mismo."
