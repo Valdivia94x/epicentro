@@ -1,76 +1,76 @@
 {
-  "nota": "Ejemplos que se muestran cuando el despliegue no tiene llave de OpenAI. Cada uno lleva su fuente: 'manual' lo escribió una persona, 'modelo' salió de una llamada real. La interfaz lo dice; presentar uno escrito a mano como si fuera del modelo sería enseñar una demo falsa.",
+  "nota": "Generado por tools/grabar-ejemplos.mts llamando al modelo. Se publican las INTERPRETACIONES, no los sismos: la app vuelve a pedir los eventos al USGS al abrir un ejemplo. Volver a generar cuando cambie el prompt.",
   "ejemplos": [
     {
       "pregunta": "¿Qué tan fuerte fue lo de Chiapas?",
-      "fuente": "manual",
+      "fuente": "modelo",
       "consulta": {
         "regionId": "mexico",
-        "magnitudMinima": 5,
-        "dias": 30,
+        "magnitudMinima": 2.5,
+        "dias": 90,
         "orden": "magnitud",
-        "limite": 20,
-        "lectura": "Busco los sismos más fuertes de México en el último mes; Chiapas cae dentro."
+        "limite": 500,
+        "lectura": "Entendí que preguntas por el sismo de Chiapas que ya ocurrió; buscaré los más fuertes en México de los últimos 90 días."
       }
     },
     {
       "pregunta": "sismos de más de 5 en el pacífico este mes",
-      "fuente": "manual",
+      "fuente": "modelo",
       "consulta": {
         "regionId": "anillo_de_fuego",
         "magnitudMinima": 5,
         "dias": 30,
-        "orden": "magnitud",
-        "limite": 200,
-        "lectura": "Cinturón de Fuego, magnitud 5 o más, últimos 30 días."
+        "orden": "reciente",
+        "limite": 500,
+        "lectura": "Entendí que buscas los sismos de magnitud mayor a 5 en el Pacífico durante este mes."
       }
     },
     {
       "pregunta": "¿ha temblado cerca de la Ciudad de México?",
-      "fuente": "manual",
+      "fuente": "modelo",
       "consulta": {
         "regionId": "brecha_guerrero",
         "magnitudMinima": 2.5,
-        "dias": 30,
+        "dias": 90,
         "orden": "reciente",
-        "limite": 200,
-        "lectura": "La capital no es una región del catálogo; miro la costa de Guerrero y Oaxaca, que es de donde le llegan casi todos."
+        "limite": 500,
+        "lectura": "Entendí que quieres revisar sismos recientes que podrían sentirse cerca de la Ciudad de México, especialmente en la costa de Guerrero y Oaxaca."
       }
     },
     {
       "pregunta": "los cinco más grandes del año en todo el mundo",
-      "fuente": "manual",
+      "fuente": "modelo",
       "consulta": {
         "regionId": "mundo",
-        "magnitudMinima": 6,
+        "magnitudMinima": 4.5,
         "dias": 365,
         "orden": "magnitud",
         "limite": 5,
-        "lectura": "Los cinco de mayor magnitud del último año, en todo el mundo."
+        "lectura": "Entendí que quieres los cinco sismos de mayor magnitud ocurridos en todo el mundo durante el último año."
       }
     },
     {
       "pregunta": "¿algo en Islandia?",
-      "fuente": "manual",
+      "fuente": "modelo",
       "consulta": {
-        "regionId": "mundo",
+        "regionId": "islandia",
         "magnitudMinima": 2.5,
-        "dias": 30,
+        "dias": 90,
         "orden": "reciente",
-        "limite": 200,
-        "lectura": "Islandia no está en la lista de regiones, así que busco en todo el mundo: verás su actividad en el Atlántico norte."
+        "limite": 500,
+        "lectura": "Entendí que quieres revisar si ha habido sismos en Islandia, sin especificar una fecha ni una magnitud mínima."
       }
     },
     {
       "pregunta": "terremotos de más de 9 grados esta semana",
-      "fuente": "manual",
+      "fuente": "modelo",
       "consulta": {
         "regionId": "mundo",
         "magnitudMinima": 9,
         "dias": 7,
         "orden": "magnitud",
-        "limite": 20,
-        "lectura": "Magnitud 9 o más en siete días. Casi seguro que sale vacío: solo ha habido cinco así en un siglo."
+        "limite": 500,
+        "lectura": "Entendí que buscas los terremotos de magnitud mayor a 9 ocurridos en todo el mundo durante esta semana."
       }
     }
   ]

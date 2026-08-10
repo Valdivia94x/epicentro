@@ -98,6 +98,30 @@ export const REGIONES: Region[] = [
     cajas: [{ o: -92, s: 8, e: -58, n: 22 }],
   },
   {
+    id: "islandia",
+    nombre: "Islandia y dorsal atlántica",
+    nota: "La dorsal medioatlántica emergida. Mucho enjambre y poca magnitud.",
+    cajas: [{ o: -26, s: 62, e: -12, n: 68 }],
+  },
+  {
+    id: "nueva_zelanda",
+    nombre: "Nueva Zelanda y Kermadec",
+    nota: "Pacífico contra Australia; el arco de Kermadec al norte.",
+    cajas: [{ o: 163, s: -50, e: 180, n: -14 }],
+  },
+  {
+    id: "taiwan",
+    nombre: "Taiwán y sur de China",
+    nota: "Queda justo fuera de la caja de Japón y le preguntan igual.",
+    cajas: [{ o: 118, s: 20, e: 126, n: 27 }],
+  },
+  {
+    id: "iran_caucaso",
+    nombre: "Irán y Cáucaso",
+    nota: "Entre Arabia y Eurasia. Fuera de la caja del Himalaya.",
+    cajas: [{ o: 42, s: 25, e: 63, n: 42 }],
+  },
+  {
     id: "anillo_de_fuego",
     nombre: "Cinturón de Fuego",
     nota: "No es un rectángulo: son cuatro cajas alrededor del Pacífico.",

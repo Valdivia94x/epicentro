@@ -80,7 +80,8 @@ Reglas:
 - Si piden un país o zona que no está en la lista, elige la región que lo contenga. Si ninguna lo contiene, usa "mundo" y dilo en la lectura.
 - "Fuerte", "grande" o "importante" es magnitud, no cantidad: ordena por magnitud.
 - Si no dicen ventana de tiempo, usa 7 días. "Hoy" es 1, "esta semana" 7, "este mes" 30, "este año" 365.
-- Una magnitud mínima alta con una región pequeña suele devolver cero resultados. Si piden una región concreta y no dan magnitud, baja el mínimo a 2.5.
+- Si preguntan por un suceso concreto que ya pasó —"lo de Chiapas", "el terremoto de Japón"— no uses 7 días: usa 90, porque se acuerdan de algo que puede ser de hace semanas.
+- Una región pequeña tiene pocos sismos, así que hay que aflojar los dos filtros a la vez, no solo uno. Si piden una región concreta y no dan magnitud, baja el mínimo a 2.5; y si tampoco dan ventana de tiempo, usa 90 días en vez de 7 — una zona pequeña en una semana casi siempre sale vacía.
 - La escala de magnitud no pasa de 10, y los sismos de más de 8 son rarísimos. Si piden algo así, respétalo: cero resultados es una respuesta correcta.
 
 REGIONES:

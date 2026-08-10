@@ -41,6 +41,33 @@ export function Estacion({
   const url = resultado?.url ?? urlInicial;
   const activo = sismos.find((s) => s.id === seleccionado) ?? null;
   const region = REGION_POR_ID.get(consulta.regionId);
+  const [ampliando, setAmpliando] = useState(false);
+
+  /**
+   * Vuelve a buscar con la consulta aflojada.
+   *
+   * No se hace solo al salir cero: eso sería contestar una pregunta distinta de
+   * la que hicieron y presentarla como la misma. Cero puede ser la respuesta
+   * correcta —«¿algo de más de 9 esta semana?» casi siempre lo es— y el usuario
+   * decide si quiere ampliar.
+   */
+  async function ampliar(cambio: Partial<Consulta>, texto: string) {
+    setAmpliando(true);
+    try {
+      const r = await fetch("/api/buscar", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ consulta: { ...consulta, ...cambio } }),
+      });
+      const datos = await r.json();
+      if (r.ok) {
+        setResultado({ ...datos, lectura: texto, fuente: "manual" });
+        setSeleccionado(null);
+      }
+    } finally {
+      setAmpliando(false);
+    }
+  }
 
   return (
     <div className="flex flex-col gap-4">
@@ -178,12 +205,55 @@ export function Estacion({
             ))}
             {sismos.length === 0 && (
               <tr>
-                <td
-                  colSpan={4}
-                  className="px-3 py-6 text-center text-fosforo-tenue"
-                >
-                  Ningún sismo con estos criterios. No es un fallo: significa
-                  que no tembló ahí.
+                <td colSpan={4} className="px-3 py-6 text-center">
+                  <p className="text-fosforo-tenue">
+                    Ningún sismo con estos criterios. No es un fallo: significa
+                    que no tembló ahí.
+                  </p>
+                  <div className="mt-3 flex flex-wrap justify-center gap-2">
+                    {consulta.dias < 365 && (
+                      <button
+                        disabled={ampliando}
+                        onClick={() =>
+                          ampliar(
+                            { dias: 365 },
+                            `Lo mismo, pero mirando un año entero en vez de ${consulta.dias} días.`,
+                          )
+                        }
+                        className="border-2 border-fosforo-honda px-2 py-1 text-[11px] text-fosforo hover:bg-pantalla-alta disabled:opacity-40"
+                      >
+                        buscar en un año
+                      </button>
+                    )}
+                    {consulta.magnitudMinima > 2.5 && (
+                      <button
+                        disabled={ampliando}
+                        onClick={() =>
+                          ampliar(
+                            { magnitudMinima: 2.5 },
+                            `Lo mismo, pero desde magnitud 2.5 en vez de ${consulta.magnitudMinima}.`,
+                          )
+                        }
+                        className="border-2 border-fosforo-honda px-2 py-1 text-[11px] text-fosforo hover:bg-pantalla-alta disabled:opacity-40"
+                      >
+                        bajar a M2.5
+                      </button>
+                    )}
+                    {consulta.regionId !== "mundo" && (
+                      <button
+                        disabled={ampliando}
+                        onClick={() =>
+                          ampliar(
+                            { regionId: "mundo" },
+                            "Lo mismo, pero en todo el mundo.",
+                          )
+                        }
+                        className="border-2 border-fosforo-honda px-2 py-1 text-[11px] text-fosforo hover:bg-pantalla-alta disabled:opacity-40"
+                      >
+                        en todo el mundo
+                      </button>
+                    )}
+                  </div>
                 </td>
               </tr>
             )}
