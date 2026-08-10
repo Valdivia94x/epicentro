@@ -45,9 +45,15 @@ function PantallaApagada() {
 export default function Page() {
   return (
     <main className="mx-auto flex min-h-dvh max-w-6xl flex-col gap-5 p-4 sm:p-8">
-      {/* El globo va arriba del todo y centrado, encima de la fila del título:
-          es el emblema del instrumento, no un elemento más de la barra. */}
-      <div className="flex translate-y-5 justify-center pt-2">
+      {/* El globo baja hasta la altura de la fila del título y asoma por arriba.
+          Va con transformación y no con margen: así nada de lo que viene
+          después se mueve un píxel.
+
+          85 y no 101, que sería el centrado exacto: a 101 el globo terminaría en
+          299 y la placa de la consola empieza en 297, así que asomarían dos
+          píxeles de verde por encima de ella. Dos píxeles fuera de sitio no se
+          leen como una decisión, se leen como un fallo. */}
+      <div className="flex translate-y-[85px] justify-center pt-2">
         <Globo />
       </div>
 
